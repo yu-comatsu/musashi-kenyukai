@@ -1,0 +1,7 @@
+@charset "utf-8";
+@import "_variables.scss";
+
+//フォントファミリー======================================
+html, .pure-g,.pure-g [class*=pure-u]{
+    font-family: $font-family-main;
+}

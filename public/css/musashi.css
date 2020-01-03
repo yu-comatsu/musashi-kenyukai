@@ -1,0 +1,30 @@
+.hero {
+  position: relative;
+  display: -webkit-box;
+  display: flex;
+  height: 100vh;
+  background-image: url("https://via.placeholder.com/900x1600");
+  background-size: cover; }
+  .hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: red;
+    opacity: 0.5; }
+  .hero__logo {
+    position: relative;
+    -webkit-writing-mode: vertical-rl;
+        -ms-writing-mode: tb-rl;
+            writing-mode: vertical-rl;
+    letter-spacing: .4em;
+    margin: 2.5em auto 1em 1em; }
+  .hero__text {
+    display: none; }
+
+.intro-about {
+  background-color: none;
+  background-image: url("https://www.transparenttextures.com/patterns/clean-textile.png");
+  /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */ }

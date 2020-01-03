@@ -1,0 +1,44 @@
+<%- include("./ejs/_variables.ejs") -%>
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title><%= $site.title %></title>
+
+    <%########### pure.css読み込み ################%>
+    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.1/build/pure-min.css" integrity="sha384-oAOxQR6DkCoMliIh8yFnu25d7Eq/PHS21PClpwjOTeU2jRSq11vu66rf90/cZr47" crossorigin="anonymous">
+    <!--[if lte IE 8]>
+    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.1/build/grids-responsive-old-ie-min.css">
+    <![endif]-->
+    <!--[if gt IE 8]><!-->
+    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.1/build/grids-responsive-min.css">
+    <!--<![endif]-->
+    <%########### pure.css読み込みここまで ################%>
+    <% for (var i = 0; i < Object.keys($css.all).length; i++) { %>
+        <link rel="stylesheet" href="<%=$css["all"]["num"+(i+1)] %>">
+    <% } %>
+</head>
+<body>
+    <header class="hero">
+        <h1 class="hero__logo"><%= $site.title %></h1>
+        <p class="hero__text">親譲りの無鉄砲で小供の時から損ばかりしている。小学校に居る時分学校の二階から飛び降りて一週間ほど腰を抜かした事がある。なぜそんな無闇をしたと聞く人があるかも知れぬ。別段深い理由でもない。新築の二階から</p>
+    </header>
+    <section class="intro-about">
+        <h2>キャッチコピー</h2>
+        <p>親譲りの無鉄砲で小供の時から損ばかりしている。小学校に居る時分学校の二階から飛び降りて一週間ほど腰を抜かした事がある。なぜそんな無闇をしたと聞く人があるかも知れぬ。別段深い理由でもない。新築の二階から</p>
+        <a href="">武蔵剣友会について</a>
+    </section>
+    <div>
+
+    </div>
+    <section>
+        <h2>キャッチコピー</h2>
+        <p>親譲りの無鉄砲で小供の時から損ばかりしている。小学校に居る時分学校の二階から飛び降りて一週間ほど腰を抜かした事がある。なぜそんな無闇をしたと聞く人があるかも知れぬ。別段深い理由でもない。新築の二階から</p>
+        <a href="">武蔵剣友会について</a>
+    </section>
+
+</body>
+</html>
