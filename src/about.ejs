@@ -1,0 +1,32 @@
+<%- include("./ejs/_variables.ejs") -%>
+<% var $pageName = $site.about.title; %>
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title><%= $pageName+"|"+$site.title %></title>
+    <%########### pure.css読み込み ################%>
+    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.1/build/pure-min.css" integrity="sha384-oAOxQR6DkCoMliIh8yFnu25d7Eq/PHS21PClpwjOTeU2jRSq11vu66rf90/cZr47" crossorigin="anonymous">
+    <!--[if lte IE 8]>
+    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.1/build/grids-responsive-old-ie-min.css">
+    <![endif]-->
+    <!--[if gt IE 8]><!-->
+    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.1/build/grids-responsive-min.css">
+    <!--<![endif]-->
+    <%########### pure.css読み込みここまで ################%>
+    <% for (var i = 0; i < Object.keys($css.all).length; i++) { %>
+        <link rel="stylesheet" href="<%=$css["all"]["num"+(i+1)] %>">
+    <% } %>
+</head>
+<body>
+    <%- include("./ejs/_drawer.ejs") -%>
+    <div class="contents-wrapper">
+        <%- include("./ejs/_footer.ejs") %>
+
+    </div>
+    
+</body>
+</html>

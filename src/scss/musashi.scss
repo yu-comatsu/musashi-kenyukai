@@ -6,6 +6,7 @@
 //===============================================
 @mixin dash {
     position: relative;
+    /*
     &::before{
         content: "";
         position: absolute;
@@ -13,7 +14,7 @@
         top: -.3em;
         width: 100%;
         height: 2px;
-        background: linear-gradient(to left, transparent,rgba($clr-accent, .4) 70% , $clr-accent);;
+        background: linear-gradient(to left, transparent,rgba($clr-font, .4) 70% , $clr-font);
         transform: scale(0, 1);
         transform-origin: left top;
         transition: transform .2s;
@@ -22,6 +23,7 @@
         transform-origin: right top;
         transform: scale(1, 1);
     }
+    */
     &::after{
         content: "";
         position: absolute;
@@ -29,7 +31,7 @@
         bottom: -.3em;
         width: 100%;
         height: 2px;
-        background: linear-gradient(to right, transparent,rgba($clr-accent, .4) 70% , $clr-accent);
+        background: linear-gradient(to right, transparent,rgba($clr-font, .4) 70% , $clr-font);
         transform: scale(0, 1);
         transform-origin: right top;
         transition: transform .2s;
@@ -75,15 +77,163 @@
     }
     span{
         margin-left: 1.5em;
+        padding: 1em 0;
     }
 }
 
+//===============================================
+//ドロワーメニュー==================================
+//===============================================
+.drawer{
+    position: relative;
+    @at-root #drawer{
+        display: none;
+    }
+    &__toggle{
+        cursor: pointer;
+        position: fixed;
+        top: 1em;
+        right: 2em;
+        z-index: 1000;
+    }
+    .svg-menu, .svg-close{
+        width: 2em;
+        height: auto;
+    }
+    .svg-menu{
+        opacity: 1;
+        transition: opacity .3s ease;
+    }
+    .svg-close{
+        position: absolute;
+        top: 0;
+        left: 0;
+        fill: #777;
+        opacity: 0;
+        transition: opacity .3s ease;
+    }
+    &__contents{
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background-color: white;
+        z-index: 999;
+        transform: translateX(101%);
+        transition-property: transform;
+        transition-timing-function: cubic-bezier(.19,.77,.21,.98);
+        transition-duration: .3s;
+        &__list{
+            margin-top: 5em;
+        }
+        &__item{
+            text-align: center;
+        }
+        &__bottom{
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: 0 calc(50% - 240px);
+            margin-top: 5em;
+            height: 12em;
+            text-align: center;
+            overflow: hidden;
+            svg{
+                position: absolute;
+                top: 10%;
+                right: 10%;
+                width: 40%;
+                transform: rotate(45deg);
+                fill: rgba(black, .4);
+            }
+        }
+        &__logo{
+            position: relative;
+            writing-mode: vertical-rl;
+            letter-spacing: .4em;
+        }
+    }
+    @at-root #drawer:checked{
+        ~ .drawer__contents{
+            transform: translateX(0);
+        }
+        ~ .drawer__toggle{
+            .svg-menu{
+                opacity: 0;
+            }
+            .svg-close{
+                opacity: 1;
+            }
+        }
+    }
+}
+@include media(sm){
+    .drawer{
+        &__contents{
+            &__link{
+                font-size: (18 / 16)*1em;
+                letter-spacing: .3em;
+                padding: .5em 0;
+            }
+        }
+    }
+}
 
+//===============================================
+//フッター =======================================
+//===============================================
+.footer{
+    position: relative;
+    overflow: hidden;
+    min-height: 50vh;
+    background-color: $clr-main;
+    padding: 2em;
+    text-align: center;
+    &__logo{
+        display: inline-block;
+        color: white;
+        font-size: (20 / 16)*1em;
+        writing-mode: vertical-rl;
+        letter-spacing: .4em;
+    }
+    svg{
+        position: absolute;
+        top: 4em;
+        right: 2em;
+        width: 40%;
+        transform: rotate(45deg);
+        fill: rgba(white, .2);
+    }
+    span{
+        display: block;
+        color: white;
+    }
+    &__bottom{
+        background-color: rgba($clr-font, .7);
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        text-align: center;
+        width: 100%;
+        span{
+            font-family: $font-family-alt;
+            font-size: (12/16)*1em;
+            color: rgba(white, .7);
+        }
+    }
+}
+
+//===============================================
+//フロントページ==================================
+//===============================================
 .hero{
     position: relative;
     display: flex;
     height: 100vh;
-    background-image: url($placeholder+"900x1600");
+    //background-image: url($placeholder+"900x1600");
+    background-image: url($site-top+"/img/つば競り合い.JPG");
     background-size:  cover;
     &::before{
         content: "";
@@ -92,26 +242,27 @@
         left: 0;
         right: 0;
         bottom: 0;
-        background-color: red;
+        //background-color: red;
         opacity: 0.5;
     }
     &__logo{
         position: relative;
         writing-mode: vertical-rl;
+        height: max-content;
+        color: white;
         letter-spacing: .4em;
         margin: 2.5em auto 1em 1em;
+        padding: .5em .2em;
+        background-color: hsla(0, 0%, 0%, .5);
     }
     &__text{
         display: none;
     }
 }
-.intro-about{
+//セクション共通設定=============================================
+.top-section{
     position: relative;
-    padding: 1em;
-    background-color: hsla(0, 0%, 86%, .3);
-    background-image: url("https://www.transparenttextures.com/patterns/clean-textile.png");
-    /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
-    overflow: hidden;
+    padding: 2em 2em 4em;
     &__title, &__text, .ctl-button{
         position: relative;
         z-index: 2;
@@ -129,5 +280,95 @@
         fill: rgba(white, .9);
         width: 50%;
         z-index: 1;
+    }
+}
+//武蔵剣友会についてセクション
+.intro-about{
+    background-color: hsla(0, 0%, 86%, .3);
+    background-image: url("https://www.transparenttextures.com/patterns/clean-textile.png");
+    /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+    overflow: hidden;
+}
+.intro-keiko{
+    .buttons{
+        &__button{
+            margin-bottom: 1.5em;
+        }
+    }
+}
+//インターセクション共通設定=============================================
+.inter-section{
+    height: 8em;
+    overflow: hidden;
+    position: relative;
+    &::before{
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        background-color: rgba(black, .4);
+        z-index: 2;
+    }
+    img{
+        position: absolute;
+        top: -50%;
+        width: 100%;
+        z-index: 1;
+    }
+}
+
+//===============================================
+//お問い合わせページ================================
+//===============================================
+.contact{
+    &__hero{
+        position: relative;
+        min-height: 40vh;
+        background-image: url($site-top+"/img/お話する会員.JPG");
+        background-size:  cover;
+        background-position: center;
+        &__title{
+            position: absolute;
+            display: inline-block;
+            bottom: .5em;
+            left: 0;
+            right: 0;
+            margin: 0 .5em;
+            width: max-content;
+            text-align: center;
+            color: white;
+            font-weight: normal;
+            letter-spacing: .2em;
+            padding: 0 .5em;
+            background-color: rgba(black, .5);
+        }
+    }
+    &__form{
+        &__text{
+            padding: 0 1em;
+        }
+        &__wrapper{
+            position: relative;
+            width: 100%;
+            max-width: 700px;
+            height: 0;
+            padding-top: 520px;
+            margin: 0 auto;
+            margin-top: 2em;
+            overflow:auto; 
+            -webkit-overflow-scrolling:touch;
+            border:2px solid #ccc; 
+            iframe{
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                border:none;
+                display:block;
+            }
+        }
     }
 }

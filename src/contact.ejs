@@ -1,0 +1,39 @@
+<%- include("./ejs/_variables.ejs") -%>
+<% var $pageName = $site.contact.title; %>
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title><%= $pageName+"|"+$site.title %></title>
+    <%########### pure.css読み込み ################%>
+    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.1/build/pure-min.css" integrity="sha384-oAOxQR6DkCoMliIh8yFnu25d7Eq/PHS21PClpwjOTeU2jRSq11vu66rf90/cZr47" crossorigin="anonymous">
+    <!--[if lte IE 8]>
+    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.1/build/grids-responsive-old-ie-min.css">
+    <![endif]-->
+    <!--[if gt IE 8]><!-->
+    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.1/build/grids-responsive-min.css">
+    <!--<![endif]-->
+    <%########### pure.css読み込みここまで ################%>
+    <% for (var i = 0; i < Object.keys($css.all).length; i++) { %>
+        <link rel="stylesheet" href="<%=$css["all"]["num"+(i+1)] %>">
+    <% } %>
+</head>
+<body class="contact">
+    <%- include("./ejs/_drawer.ejs") -%>
+    <div class="contents-wrapper">
+        <header class="contact__hero">
+            <h1 class="contact__hero__title"><%= $pageName %></h1>
+        </header>
+        <section class="contact__form">
+            <p class="contact__form__text">稽古の見学や武蔵剣友会へのご質問等、下記のフォームからお気軽にお問い合わせください。</p>
+            <div class="contact__form__wrapper">
+                <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScW5mCmHrU-JIP3tbpaTmI9illb8l-eCAw3bXvD5Lb5w7irCg/viewform?embedded=true" frameborder="0" marginheight="0" marginwidth="0">読み込んでいます…</iframe>
+            </div>
+        </section>
+        <%- include("./ejs/_footer.ejs") %>
+    </div>
+</body>
+</html>
