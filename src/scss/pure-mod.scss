@@ -5,3 +5,9 @@
 html, .pure-g,.pure-g [class*=pure-u]{
     font-family: $font-family-main;
 }
+
+//table================================================
+.pure-table thead{
+    background-color: $clr-main;
+    color: white;
+}

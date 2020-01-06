@@ -180,6 +180,18 @@
         }
     }
 }
+@include media(md){
+    .drawer{
+        .svg-menu, .svg-close{
+            width: 3em;
+        }
+        &__contents{
+            &__link{
+                font-size: (24 / 16)*1em;
+            }
+        }
+    }
+}
 
 //===============================================
 //フッター =======================================
@@ -235,6 +247,7 @@
     //background-image: url($placeholder+"900x1600");
     background-image: url($site-top+"/img/つば競り合い.JPG");
     background-size:  cover;
+    background-position: center;
     &::before{
         content: "";
         position: absolute;
@@ -259,10 +272,18 @@
         display: none;
     }
 }
+@include media(md){
+    .hero{
+        &__logo{
+            font-size: 4em;
+        }
+    }
+}
+
 //セクション共通設定=============================================
 .top-section{
     position: relative;
-    padding: 2em 2em 4em;
+    padding: 4em 2em;
     &__title, &__text, .ctl-button{
         position: relative;
         z-index: 2;
@@ -282,13 +303,37 @@
         z-index: 1;
     }
 }
+@include media(md){
+    .top-section{
+        &__title{
+            font-size: 2em;
+        }
+        &__text{
+            margin: 2em 0;
+        }
+    }
+}
+@include media(lg){
+    .top-section{
+        padding: 5em calc(50% - (450 / 16)*1em);
+    }
+}
+
 //武蔵剣友会についてセクション
 .intro-about{
     background-color: hsla(0, 0%, 86%, .3);
     background-image: url("https://www.transparenttextures.com/patterns/clean-textile.png");
     /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
     overflow: hidden;
+    text-align: left;
 }
+@include media(sm){
+    .intro-about{
+        text-align: center;
+    }
+}
+
+
 .intro-keiko{
     .buttons{
         &__button{
@@ -318,6 +363,76 @@
         z-index: 1;
     }
 }
+@include media(sm){
+    .inter-section{
+        height: 11em;
+    }
+}
+@include media(md){
+    .inter-section{
+        height: 15em;
+    }
+}
+
+
+//===============================================
+//aboutページ================================
+//===============================================
+.about{
+    &__hero{
+        position: relative;
+        min-height: 40vh;
+        background-image: url($site-top+"/img/keiko4.jpg");
+        background-size:  cover;
+        background-position: center;
+        &__title{
+            position: absolute;
+            display: inline-block;
+            bottom: .5em;
+            left: 0;
+            right: 0;
+            margin: 0 .5em;
+            width: max-content;
+            text-align: center;
+            color: white;
+            font-weight: normal;
+            font-size: 1.5em;
+            letter-spacing: .2em;
+            padding: 0 .5em;
+            background-color: rgba(black, .5);
+        }
+    }
+    &__section{
+        position: relative;
+        padding: 4em 2em;
+        &__title, &__text, .ctl-button{
+            position: relative;
+            z-index: 2;
+        }
+        &__title{
+            font-weight: normal;
+        }
+        &__text{
+            line-height: 2;
+        }
+        &__table{
+            width: 100%;
+            margin-bottom: 2em;
+            font-size: (14 / 16)*1em;
+        }
+        img{
+            width: 100%;
+        }
+        &.award{
+            background-color: rgba($clr-base, .2);
+        }
+        &.message{
+            .president-name{
+                font-size: (20 / 16)*1em;
+            }
+        }
+    }
+}
 
 //===============================================
 //お問い合わせページ================================
@@ -339,6 +454,7 @@
             width: max-content;
             text-align: center;
             color: white;
+            font-size: 1.5em;
             font-weight: normal;
             letter-spacing: .2em;
             padding: 0 .5em;

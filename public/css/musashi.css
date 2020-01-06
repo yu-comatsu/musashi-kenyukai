@@ -155,6 +155,12 @@
     letter-spacing: .3em;
     padding: .5em 0; } }
 
+@media screen and (min-width: 48em) {
+  .drawer .svg-menu, .drawer .svg-close {
+    width: 3em; }
+  .drawer__contents__link {
+    font-size: 1.5em; } }
+
 .footer {
   position: relative;
   overflow: hidden;
@@ -199,7 +205,8 @@
   display: flex;
   height: 100vh;
   background-image: url("../img/つば競り合い.JPG");
-  background-size: cover; }
+  background-size: cover;
+  background-position: center; }
   .hero::before {
     content: "";
     position: absolute;
@@ -224,9 +231,13 @@
   .hero__text {
     display: none; }
 
+@media screen and (min-width: 48em) {
+  .hero__logo {
+    font-size: 4em; } }
+
 .top-section {
   position: relative;
-  padding: 2em 2em 4em; }
+  padding: 4em 2em; }
   .top-section__title, .top-section__text, .top-section .ctl-button {
     position: relative;
     z-index: 2; }
@@ -242,11 +253,26 @@
     width: 50%;
     z-index: 1; }
 
+@media screen and (min-width: 48em) {
+  .top-section__title {
+    font-size: 2em; }
+  .top-section__text {
+    margin: 2em 0; } }
+
+@media screen and (min-width: 64em) {
+  .top-section {
+    padding: 5em calc(50% - (450 / 16)*1em); } }
+
 .intro-about {
   background-color: rgba(219, 219, 219, 0.3);
   background-image: url("https://www.transparenttextures.com/patterns/clean-textile.png");
   /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
-  overflow: hidden; }
+  overflow: hidden;
+  text-align: left; }
+
+@media screen and (min-width: 35.5em) {
+  .intro-about {
+    text-align: center; } }
 
 .intro-keiko .buttons__button {
   margin-bottom: 1.5em; }
@@ -270,6 +296,59 @@
     width: 100%;
     z-index: 1; }
 
+@media screen and (min-width: 35.5em) {
+  .inter-section {
+    height: 11em; } }
+
+@media screen and (min-width: 48em) {
+  .inter-section {
+    height: 15em; } }
+
+.about__hero {
+  position: relative;
+  min-height: 40vh;
+  background-image: url("../img/keiko4.jpg");
+  background-size: cover;
+  background-position: center; }
+  .about__hero__title {
+    position: absolute;
+    display: inline-block;
+    bottom: .5em;
+    left: 0;
+    right: 0;
+    margin: 0 .5em;
+    width: -webkit-max-content;
+    width: -moz-max-content;
+    width: max-content;
+    text-align: center;
+    color: white;
+    font-weight: normal;
+    font-size: 1.5em;
+    letter-spacing: .2em;
+    padding: 0 .5em;
+    background-color: rgba(0, 0, 0, 0.5); }
+
+.about__section {
+  position: relative;
+  padding: 4em 2em; }
+  .about__section__title, .about__section__text, .about__section .ctl-button {
+    position: relative;
+    z-index: 2; }
+  .about__section__title {
+    font-weight: normal; }
+  .about__section__text {
+    line-height: 2; }
+  .about__section__table {
+    width: 100%;
+    margin-bottom: 2em;
+    font-size: 0.875em; }
+  .about__section img {
+    width: 100%; }
+  .about__section.award {
+    background-color: rgba(229, 210, 170, 0.2); }
+  .about__section.message .president-name {
+    font-size: 1.25em; }
+
 .contact__hero {
   position: relative;
   min-height: 40vh;
@@ -288,6 +367,7 @@
     width: max-content;
     text-align: center;
     color: white;
+    font-size: 1.5em;
     font-weight: normal;
     letter-spacing: .2em;
     padding: 0 .5em;

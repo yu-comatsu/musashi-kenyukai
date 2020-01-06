@@ -24,8 +24,72 @@
 <body>
     <%- include("./ejs/_drawer.ejs") -%>
     <div class="contents-wrapper">
+        <header class="about__hero">
+            <h1 class="about__hero__title"><%= $pageName %></h1>
+        </header>
+        <section class="about__section about-us" id="about-us">
+            <h2 class="about__section__title">高みを目指して</h2>
+            <p class="about__section__text">武蔵剣友会の団体理念など。親譲りの無鉄砲で小供の時から損ばかりしている。小学校に居る時分学校の二階から飛び降りて一週間ほど腰を抜かした事がある。なぜそんな無闇をしたと聞く人があるかも知れぬ。別段深い理由でもない。新築の二階から</p>
+            <a class="ctl-button" href="">
+                <i></i><span>活動について</span>
+            </a>
+        </section>
+        <section class="about__section award" id="award">
+            <h2 class="about__section__title">活動実績</h2>
+            <p class="about__section__text">武蔵剣友会の大会実績や表彰、沿革的なできごとなど。</p>
+            <table class="about__section__table pure-table pure-table-horizontal">
+                <thead>
+                    <tr>
+                        <th>年月</th>
+                        <th>できごと</th>
+                    </tr>
+                </thead>
+            
+                <tbody>
+                    <tr>
+                        <td>2019.12</td>
+                        <td>AA君 〇〇大会優勝</td>
+                    </tr>
+                    <tr>
+                        <td>2019.6</td>
+                        <td>BB君 〇〇大会ベスト4</td>
+                    </tr>
+                    <tr>
+                        <td>2018.4</td>
+                        <td>CC君 〇〇大会準優勝</td>
+                    </tr>
+                    <tr>
+                        <td>2017.6</td>
+                        <td>DD君 〇〇大会準優勝</td>
+                    </tr>
+                    <tr>
+                        <td>2016.10</td>
+                        <td>武蔵剣友会が〇〇から表彰</td>
+                    </tr>
+                    <tr>
+                        <td>2005.8</td>
+                        <td>会員数が〇〇人を超える</td>
+                    </tr>
+                    <tr>
+                        <td>20XX.XX</td>
+                        <td>武蔵剣友会発足</td>
+                    </tr>
+                </tbody>
+            </table>
+            <a class="ctl-button" href="<%= $site.top_url+$site.contact.slug+".html" %>">
+                <i></i><span>見学のお申込みはこちら</span>
+            </a>
+        </section>
+        <section class="about__section message" id="message">
+            <h2 class="about__section__title">先生紹介</h2>
+            <img src="./img/daihyo.jpg" alt="代表近影">
+            <span class="president-name">会長 武蔵太郎</span>
+            <p class="about__section__text">会長のメッセージ。親譲りの無鉄砲で小供の時から損ばかりしている。小学校に居る時分学校の二階から飛び降りて一週間ほど腰を抜かした事がある。なぜそんな無闇をしたと聞く人があるかも知れぬ。別段深い理由でもない。新築の二階から</p>
+            <a class="ctl-button" href="">
+                <i></i><span>活動の詳細はこちら</span>
+            </a>
+        </section>
         <%- include("./ejs/_footer.ejs") %>
-
     </div>
     
 </body>
