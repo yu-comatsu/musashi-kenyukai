@@ -81,12 +81,71 @@
             </a>
         </section>
         <section class="about__section message" id="message">
-            <h2 class="about__section__title">先生紹介</h2>
+            <h2 class="about__section__title">代表挨拶</h2>
             <img src="./img/daihyo.jpg" alt="代表近影">
-            <span class="president-name">会長 武蔵太郎</span>
+            <span class="president-name">会長　武蔵 太郎</span>
             <p class="about__section__text">会長のメッセージ。親譲りの無鉄砲で小供の時から損ばかりしている。小学校に居る時分学校の二階から飛び降りて一週間ほど腰を抜かした事がある。なぜそんな無闇をしたと聞く人があるかも知れぬ。別段深い理由でもない。新築の二階から</p>
             <a class="ctl-button" href="">
                 <i></i><span>活動の詳細はこちら</span>
+            </a>
+        </section>
+        <div class="about__inter-section">
+            <%- include("./ejs/_tonbo.svg.ejs") %>
+        </div>
+        <section class="about__section mentor" id="mentor">
+            <h2 class="about__section__title">指導者紹介</h2>
+            <p class="about__section__text">武蔵剣友会で指導を行う先生方をご紹介します。</p>
+            <div class="mentor__card">
+                <img class="mentor__card__img" src="./img/daihyo.jpg" alt="角屋 弘 先生">
+                <span class="mentor__card__name">角屋 弘 先生</span>
+                <p class="mentor__card__text">ひとこと。親譲りの無鉄砲で小供の時から損ばかりしている。小学校に居る時分学校の二階から飛び降りて一週間ほど腰を抜かした事がある。なぜそんな無闇をしたと聞く人があるかも知れぬ。別段深い理由でもない。新築の二階から</p>
+            </div>
+            <div class="mentor__card">
+                <img class="mentor__card__img" src="./img/daihyo.jpg" alt="角屋 弘 先生">
+                <span class="mentor__card__name">角屋 弘 先生</span>
+                <p class="mentor__card__text">ひとこと。親譲りの無鉄砲で小供の時から損ばかりしている。小学校に居る時分学校の二階から飛び降りて一週間ほど腰を抜かした事がある。なぜそんな無闇をしたと聞く人があるかも知れぬ。別段深い理由でもない。新築の二階から</p>
+            </div>
+            <div class="mentor__card">
+                <img class="mentor__card__img" src="./img/daihyo.jpg" alt="角屋 弘 先生">
+                <span class="mentor__card__name">角屋 弘 先生</span>
+                <p class="mentor__card__text">ひとこと。親譲りの無鉄砲で小供の時から損ばかりしている。小学校に居る時分学校の二階から飛び降りて一週間ほど腰を抜かした事がある。なぜそんな無闇をしたと聞く人があるかも知れぬ。別段深い理由でもない。新築の二階から</p>
+            </div>
+            <a class="ctl-button" href="">
+                <i></i><span>稽古の詳細はこちら</span>
+            </a>
+        </section>
+        <section class="about__section info" id="info">
+            <h2 class="about__section__title">入会について</h2>
+            <p class="about__section__text">武蔵剣友会の団体理念など。親譲りの無鉄砲で小供の時から損ばかりしている。小学校に居る時分学校の二階から飛び降りて一週間ほど腰を抜かした事がある。なぜそんな無闇をしたと聞く人があるかも知れぬ。別段深い理由でもない。新築の二階から</p>
+            <table class="about__section__table pure-table pure-table-horizontal">
+                <tbody>
+                    <tr>
+                        <th><span>入会金</span></th>
+                        <td>4,000円</td>
+                    </tr>
+                    <tr>
+                        <th><span>月謝</span></th>
+                        <td>月々2,000円〜4,000円<br>段位によって規定しています</td>
+                    </tr>
+                    <tr>
+                        <th><span>年間諸経費</span></th>
+                        <td>年1,500円</td>
+                    </tr>
+                    <tr>
+                        <th><span>その他</span></th>
+                        <td>
+                            <ul>
+                                <li>スポーツ保険料 年間2,000円程度</li>
+                                <li>剣道連盟登録費用 年間500円程度</li>
+                                <li>大会参加費 1大会あたり1,000円程度</li>
+                            </ul>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <a class="ctl-button" href="<%= $site.top_url+$site.contact.slug+".html" %>">
+                <i></i><span>見学・入会のお申込み</span>
             </a>
         </section>
         <%- include("./ejs/_footer.ejs") %>

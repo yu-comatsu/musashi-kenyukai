@@ -431,6 +431,39 @@
                 font-size: (20 / 16)*1em;
             }
         }
+        @at-root .mentor{
+            &__card{
+                margin-bottom: 3em;
+            }
+        }
+        &.info{
+            background-color: rgba($clr-main, .2);
+            background-image: url("https://www.transparenttextures.com/patterns/clean-textile.png");
+            /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */        
+            .about__section__table{
+                &, th, td{
+                    border-color: $clr-font;
+                }
+                th{
+                    span{
+                        writing-mode: vertical-rl;
+                        white-space: nowrap;
+                    }
+                }
+                ul{
+                    padding-left: 1em;
+                }
+            }
+        }
+    }
+    &__inter-section{
+        display: flex;
+        svg{
+            height: 4em;
+            max-width: 50%;
+            margin: auto;
+            fill: $clr-accent;
+        }
     }
 }
 

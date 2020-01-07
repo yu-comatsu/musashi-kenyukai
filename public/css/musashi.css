@@ -348,6 +348,30 @@
     background-color: rgba(229, 210, 170, 0.2); }
   .about__section.message .president-name {
     font-size: 1.25em; }
+  .mentor__card {
+    margin-bottom: 3em; }
+  .about__section.info {
+    background-color: rgba(15, 35, 80, 0.2);
+    background-image: url("https://www.transparenttextures.com/patterns/clean-textile.png");
+    /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */ }
+    .about__section.info .about__section__table, .about__section.info .about__section__table th, .about__section.info .about__section__table td {
+      border-color: black; }
+    .about__section.info .about__section__table th span {
+      -webkit-writing-mode: vertical-rl;
+          -ms-writing-mode: tb-rl;
+              writing-mode: vertical-rl;
+      white-space: nowrap; }
+    .about__section.info .about__section__table ul {
+      padding-left: 1em; }
+
+.about__inter-section {
+  display: -webkit-box;
+  display: flex; }
+  .about__inter-section svg {
+    height: 4em;
+    max-width: 50%;
+    margin: auto;
+    fill: #E62B1E; }
 
 .contact__hero {
   position: relative;
