@@ -32,7 +32,7 @@
             <%- include("./ejs/_tonbo.svg.ejs") %>
             <h2 class="top-section__title">技を磨き　志を高く</h2>
             <p class="top-section__text">親譲りの無鉄砲で小供の時から損ばかりしている。小学校に居る時分学校の二階から飛び降りて一週間ほど腰を抜かした事がある。なぜそんな無闇をしたと聞く人があるかも知れぬ。別段深い理由でもない。新築の二階から</p>
-            <a class="ctl-button" href="">
+            <a class="ctl-button" href="<%= $site.top_url+$site.about.slug+".html" %>">
                 <i></i><span>武蔵剣友会について</span>
             </a>
         </section>
@@ -44,12 +44,12 @@
             <p class="top-section__text">親譲りの無鉄砲で小供の時から損ばかりしている。小学校に居る時分学校の二階から飛び降りて一週間ほど腰を抜かした事がある。なぜそんな無闇をしたと聞く人があるかも知れぬ。別段深い理由でもない。新築の二階から</p>
             <div class="buttons pure-g">
                 <div class="buttons__button pure-u pure-u-1 pure-u-sm-1-2">
-                    <a class="ctl-button" href="">
+                    <a class="ctl-button" href="<%= $site.top_url+$site.activity.slug+".html#practice" %>">
                         <i></i><span>稽古について</span>
                     </a>
                 </div>
                 <div class="buttons__button pure-u pure-u-1 pure-u-sm-1-2">
-                    <a class="ctl-button" href="">
+                    <a class="ctl-button" href="<%= $site.top_url+$site.about.slug+".html#mentor" %>">
                         <i></i><span>指導者紹介</span>
                     </a>
                 </div>
@@ -67,7 +67,7 @@
         <section class="top-section intro-events">
             <h2 class="top-section__title">仲間と楽しく</h2>
             <p class="top-section__text">親譲りの無鉄砲で小供の時から損ばかりしている。小学校に居る時分学校の二階から飛び降りて一週間ほど腰を抜かした事がある。なぜそんな無闇をしたと聞く人があるかも知れぬ。別段深い理由でもない。新築の二階から</p>
-            <a class="ctl-button" href="">
+            <a class="ctl-button" href="<%= $site.top_url+$site.activity.slug+".html#event" %>">
                 <i></i><span>年間行事について</span>
             </a>
         </section>
