@@ -10,6 +10,7 @@ const ctlModule = "/Users/yuta_comatsu/Google ドライブ/Web Media Office/04�
 const src = ctlModule+"/src"
 const public = ctlModule+"/public"
 
+
 // 監視 ※gulp4の書き方です。
 gulp.task( "default", function () {
     gulp.watch( src+"/**/*.scss", gulp.series( "sass" ) ); // srcディレクトリ以下の.scssファイルの更新を監視
@@ -55,3 +56,6 @@ gulp.task("sass", function() {
             sound: 'Purr',
         }));
 });
+
+//ビルド
+gulp.task("build", gulp.series('ejs', 'sass'));
