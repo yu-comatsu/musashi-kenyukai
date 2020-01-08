@@ -46,6 +46,48 @@
             transform-origin: left top;
     -webkit-transform: scale(1, 1);
             transform: scale(1, 1); }
+  .ctl-button[target="_blank"] {
+    position: relative;
+    /*
+    &::before{
+        content: "";
+        position: absolute;
+        left: 0;
+        top: -.3em;
+        width: 100%;
+        height: 2px;
+        background: linear-gradient(to left, transparent,rgba($clr-font, .4) 70% , $clr-font);
+        transform: scale(0, 1);
+        transform-origin: left top;
+        transition: transform .2s;
+    }
+    &:hover::before{
+        transform-origin: right top;
+        transform: scale(1, 1);
+    }
+    */ }
+    .ctl-button[target="_blank"]::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -.3em;
+      width: 100%;
+      height: 2px;
+      background: -webkit-gradient(linear, left top, right top, from(transparent), color-stop(70%, rgba(230, 43, 30, 0.4)), to(#E62B1E));
+      background: linear-gradient(to right, transparent, rgba(230, 43, 30, 0.4) 70%, #E62B1E);
+      -webkit-transform: scale(0, 1);
+              transform: scale(0, 1);
+      -webkit-transform-origin: right top;
+              transform-origin: right top;
+      -webkit-transition: -webkit-transform .2s;
+      transition: -webkit-transform .2s;
+      transition: transform .2s;
+      transition: transform .2s, -webkit-transform .2s; }
+    .ctl-button[target="_blank"]:hover::after {
+      -webkit-transform-origin: left top;
+              transform-origin: left top;
+      -webkit-transform: scale(1, 1);
+              transform: scale(1, 1); }
   .ctl-button i {
     display: -webkit-box;
     display: flex; }
@@ -117,6 +159,9 @@
       margin-top: 5em; }
     .drawer__contents__item {
       text-align: center; }
+    .drawer__contents__link {
+      -webkit-transition: background-color 0.3s ease;
+      transition: background-color 0.3s ease; }
     .drawer__contents__bottom {
       position: absolute;
       bottom: 0;
@@ -124,14 +169,16 @@
       right: 0;
       margin: 0 calc(50% - 240px);
       margin-top: 5em;
-      height: 12em;
+      height: -webkit-max-content;
+      height: -moz-max-content;
+      height: max-content;
       text-align: center;
       overflow: hidden; }
       .drawer__contents__bottom svg {
         position: absolute;
-        top: 10%;
-        right: 10%;
-        width: 40%;
+        top: 20%;
+        right: 20%;
+        width: 30%;
         -webkit-transform: rotate(45deg);
                 transform: rotate(45deg);
         fill: rgba(0, 0, 0, 0.4); }
@@ -159,7 +206,14 @@
   .drawer .svg-menu, .drawer .svg-close {
     width: 3em; }
   .drawer__contents__link {
-    font-size: 1.5em; } }
+    font-size: 1.5em; }
+  .drawer__contents__bottom svg {
+    position: absolute;
+    top: 10%;
+    right: 10%;
+    width: 40%; }
+  .drawer__contents__logo {
+    font-size: 2em; } }
 
 .footer {
   position: relative;
@@ -204,7 +258,7 @@
   display: -webkit-box;
   display: flex;
   height: 100vh;
-  background-image: url("../img/つば競り合い.JPG");
+  background-image: url("https://musashi-kendo.netlify.com/img/つば競り合い.JPG");
   background-size: cover;
   background-position: center; }
   .hero::before {
@@ -233,7 +287,12 @@
 
 @media screen and (min-width: 48em) {
   .hero__logo {
-    font-size: 4em; } }
+    font-size: 3em; } }
+
+@media screen and (min-width: 64em) {
+  .hero__logo {
+    font-size: 4em;
+    margin: auto; } }
 
 .top-section {
   position: relative;
@@ -245,13 +304,6 @@
     font-weight: normal; }
   .top-section__text {
     line-height: 2; }
-  .top-section svg {
-    position: absolute;
-    top: 1em;
-    right: -1em;
-    fill: rgba(255, 255, 255, 0.9);
-    width: 50%;
-    z-index: 1; }
 
 @media screen and (min-width: 48em) {
   .top-section__title {
@@ -269,10 +321,23 @@
   /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
   overflow: hidden;
   text-align: left; }
+  .intro-about svg {
+    position: absolute;
+    top: 1em;
+    right: -1em;
+    fill: rgba(255, 255, 255, 0.9);
+    width: 50%;
+    max-width: 500px;
+    z-index: 1; }
 
 @media screen and (min-width: 35.5em) {
   .intro-about {
     text-align: center; } }
+
+@media screen and (min-width: 64em) {
+  .intro-about svg {
+    top: 0;
+    right: 5%; } }
 
 .intro-keiko .buttons__button {
   margin-bottom: 1.5em; }
@@ -305,18 +370,15 @@
     height: 15em; } }
 
 .about__hero {
-  position: relative;
+  display: -webkit-box;
+  display: flex;
   min-height: 40vh;
-  background-image: url("../img/keiko4.jpg");
+  background-image: url("https://musashi-kendo.netlify.com/img/keiko4.jpg");
   background-size: cover;
   background-position: center; }
   .about__hero__title {
-    position: absolute;
     display: inline-block;
-    bottom: .5em;
-    left: 0;
-    right: 0;
-    margin: 0 .5em;
+    margin: auto auto .5em 1em;
     width: -webkit-max-content;
     width: -moz-max-content;
     width: max-content;
@@ -324,7 +386,6 @@
     color: white;
     font-weight: normal;
     font-size: 1.5em;
-    letter-spacing: .2em;
     padding: 0 .5em;
     background-color: rgba(0, 0, 0, 0.5); }
 
@@ -350,18 +411,27 @@
     font-size: 1.25em; }
   .mentor__card {
     margin-bottom: 3em; }
+    .mentor__card__img {
+      display: block; }
+    .mentor__card__name {
+      margin: 0;
+      margin-top: .5em;
+      font-weight: normal; }
+    .mentor__card__job-title {
+      font-size: 0.875em;
+      color: rgba(0, 0, 0, 0.7); }
   .about__section.info {
     background-color: rgba(15, 35, 80, 0.2);
     background-image: url("https://www.transparenttextures.com/patterns/clean-textile.png");
     /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */ }
-    .about__section.info .about__section__table, .about__section.info .about__section__table th, .about__section.info .about__section__table td {
+    .about__section__table, .about__section__table th, .about__section__table td {
       border-color: black; }
-    .about__section.info .about__section__table th span {
+    .about__section__table th span {
       -webkit-writing-mode: vertical-rl;
           -ms-writing-mode: tb-rl;
               writing-mode: vertical-rl;
       white-space: nowrap; }
-    .about__section.info .about__section__table ul {
+    .about__section__table ul {
       padding-left: 1em; }
 
 .about__inter-section {
@@ -373,19 +443,128 @@
     margin: auto;
     fill: #E62B1E; }
 
-.contact__hero {
-  position: relative;
+@media screen and (min-width: 48em) {
+  .about__section__table th span {
+    -webkit-writing-mode: horizontal-tb;
+        -ms-writing-mode: lr-tb;
+            writing-mode: horizontal-tb; }
+  .message__img {
+    display: block; }
+  .message__para {
+    box-sizing: border-box;
+    padding-left: .5em; }
+  .mentor__card__img {
+    display: block; }
+  .mentor__card__para {
+    box-sizing: border-box;
+    padding-left: .5em; }
+  .mentor__card__name {
+    margin: 0; } }
+
+@media screen and (min-width: 64em) {
+  .about__hero, .about__section {
+    padding: 5em calc(50% - (450 / 16)*1em); }
+  .about__hero__title {
+    font-size: 2em;
+    margin-left: 0; } }
+
+.activity__hero {
+  display: -webkit-box;
+  display: flex;
   min-height: 40vh;
-  background-image: url("../img/お話する会員.JPG");
+  background-image: url("https://musashi-kendo.netlify.com/img/お話する会員.JPG");
+  background-size: cover;
+  background-position: center; }
+  .activity__hero__title {
+    display: inline-block;
+    margin: auto auto .5em 1em;
+    width: -webkit-max-content;
+    width: -moz-max-content;
+    width: max-content;
+    text-align: center;
+    color: white;
+    font-size: 1.5em;
+    font-weight: normal;
+    letter-spacing: .2em;
+    padding: 0 .5em;
+    background-color: rgba(0, 0, 0, 0.5); }
+
+.activity__section {
+  position: relative;
+  padding: 4em 2em; }
+  .activity__section__title, .activity__section__text, .activity__section .ctl-button {
+    position: relative;
+    z-index: 2; }
+  .activity__section__title {
+    font-weight: normal; }
+  .activity__section__text {
+    line-height: 2; }
+  .activity__section__school {
+    margin-top: 2em; }
+    .activity__section__school__title {
+      font-weight: normal;
+      margin: .5em 0; }
+  .activity__section.practice, .activity__section.access {
+    background-color: rgba(229, 210, 170, 0.2); }
+  .activity__section img {
+    display: block;
+    width: 100%; }
+
+.activity__inter-section {
+  display: -webkit-box;
+  display: flex;
+  background-color: rgba(229, 210, 170, 0.2); }
+  .activity__inter-section svg {
+    height: 4em;
+    max-width: 50%;
+    margin: auto;
+    fill: #E62B1E; }
+
+.activity .calender-wrapper {
+  position: relative;
+  margin: 0 -2em;
+  height: 0;
+  padding-top: 150%; }
+  .activity .calender-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; }
+  @media screen and (min-width: 35.5em) {
+    .activity .calender-wrapper {
+      padding-top: 100%; } }
+
+.activity .buttons__button {
+  margin-bottom: 1.5em; }
+
+@media screen and (min-width: 48em) {
+  .activity__section__school__desc {
+    box-sizing: border-box;
+    padding-left: .5em; }
+  .activity__section__school__title {
+    margin-top: 0; } }
+
+@media screen and (min-width: 64em) {
+  .activity__hero, .activity__section {
+    padding: 5em calc(50% - (450 / 16)*1em); }
+  .activity__hero__title {
+    font-size: 2em;
+    margin-left: 0; }
+  .activity .calender-wrapper {
+    margin: 0;
+    padding-top: 75%; } }
+
+.contact__hero {
+  display: -webkit-box;
+  display: flex;
+  min-height: 40vh;
+  background-image: url("https://musashi-kendo.netlify.com/img/お話する会員.JPG");
   background-size: cover;
   background-position: center; }
   .contact__hero__title {
-    position: absolute;
     display: inline-block;
-    bottom: .5em;
-    left: 0;
-    right: 0;
-    margin: 0 .5em;
+    margin: auto auto .5em 1em;
     width: -webkit-max-content;
     width: -moz-max-content;
     width: max-content;
@@ -398,7 +577,7 @@
     background-color: rgba(0, 0, 0, 0.5); }
 
 .contact__form__text {
-  padding: 0 1em; }
+  padding: 0 2em; }
 
 .contact__form__wrapper {
   position: relative;
@@ -406,7 +585,7 @@
   max-width: 700px;
   height: 0;
   padding-top: 520px;
-  margin: 0 auto;
+  margin: 1em auto;
   margin-top: 2em;
   overflow: auto;
   -webkit-overflow-scrolling: touch;
@@ -419,3 +598,13 @@
     height: 100%;
     border: none;
     display: block; }
+
+@media screen and (min-width: 64em) {
+  .contact__hero, .contact__form {
+    padding: 5em calc(50% - (450 / 16)*1em); }
+  .contact__hero__title {
+    font-size: 2em; }
+  .contact__form__text {
+    text-align: center; }
+  .contact__form__wrapper {
+    padding-top: 100%; } }

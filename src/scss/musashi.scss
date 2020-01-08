@@ -4,7 +4,7 @@
 //===============================================
 //ミックスイン定義==================================
 //===============================================
-@mixin dash {
+@mixin dash($color) {
     position: relative;
     /*
     &::before{
@@ -31,7 +31,7 @@
         bottom: -.3em;
         width: 100%;
         height: 2px;
-        background: linear-gradient(to right, transparent,rgba($clr-font, .4) 70% , $clr-font);
+        background: linear-gradient(to right, transparent,rgba($color, .4) 70% , $color);
         transform: scale(0, 1);
         transform-origin: right top;
         transition: transform .2s;
@@ -52,7 +52,10 @@
     font-family: $font-family-alt;
     text-decoration: none;
     display: inline-block;
-    @include dash;
+    @include dash($clr-font);
+    &[target="_blank"]{
+        @include dash($clr-accent);
+    }
     i{
         display: flex;
         &::before, &::after{
@@ -130,6 +133,9 @@
         &__item{
             text-align: center;
         }
+        &__link{
+            transition: background-color 0.3s ease;
+        }
         &__bottom{
             position: absolute;
             bottom: 0;
@@ -137,14 +143,14 @@
             right: 0;
             margin: 0 calc(50% - 240px);
             margin-top: 5em;
-            height: 12em;
+            height: max-content;
             text-align: center;
             overflow: hidden;
             svg{
                 position: absolute;
-                top: 10%;
-                right: 10%;
-                width: 40%;
+                top: 20%;
+                right: 20%;
+                width: 30%;
                 transform: rotate(45deg);
                 fill: rgba(black, .4);
             }
@@ -189,6 +195,17 @@
             &__link{
                 font-size: (24 / 16)*1em;
             }
+            &__bottom{
+                svg{
+                    position: absolute;
+                    top: 10%;
+                    right: 10%;
+                    width: 40%;
+                }    
+            }
+            &__logo{
+                font-size: 2em;
+            }    
         }
     }
 }
@@ -275,7 +292,15 @@
 @include media(md){
     .hero{
         &__logo{
+            font-size: 3em;
+        }
+    }
+}
+@include media(lg){
+    .hero{
+        &__logo{
             font-size: 4em;
+            margin: auto;
         }
     }
 }
@@ -293,14 +318,6 @@
     }
     &__text{
         line-height: 2;
-    }
-    svg{
-        position: absolute;
-        top: 1em;
-        right: -1em;
-        fill: rgba(white, .9);
-        width: 50%;
-        z-index: 1;
     }
 }
 @include media(md){
@@ -326,10 +343,27 @@
     /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
     overflow: hidden;
     text-align: left;
+    svg{
+        position: absolute;
+        top: 1em;
+        right: -1em;
+        fill: rgba(white, .9);
+        width: 50%;
+        max-width: 500px;
+        z-index: 1;
+    }
 }
 @include media(sm){
     .intro-about{
         text-align: center;
+    }
+}
+@include media(lg){
+    .intro-about{
+        svg{
+            top: 0;
+            right: 5%;
+        }
     }
 }
 
@@ -374,30 +408,24 @@
     }
 }
 
-
 //===============================================
 //aboutページ================================
 //===============================================
 .about{
     &__hero{
-        position: relative;
+        display: flex;
         min-height: 40vh;
         background-image: url($site-top+"/img/keiko4.jpg");
         background-size:  cover;
         background-position: center;
         &__title{
-            position: absolute;
             display: inline-block;
-            bottom: .5em;
-            left: 0;
-            right: 0;
-            margin: 0 .5em;
+            margin: auto auto .5em 1em;
             width: max-content;
             text-align: center;
             color: white;
             font-weight: normal;
             font-size: 1.5em;
-            letter-spacing: .2em;
             padding: 0 .5em;
             background-color: rgba(black, .5);
         }
@@ -434,13 +462,25 @@
         @at-root .mentor{
             &__card{
                 margin-bottom: 3em;
+                &__img{
+                    display: block;
+                }
+                &__name{
+                    margin: 0;
+                    margin-top: .5em;
+                    font-weight: normal;
+                }
+                &__job-title{
+                    font-size: (14 / 16)*1em;
+                    color: rgba($clr-font, .7);
+                }
             }
         }
         &.info{
             background-color: rgba($clr-main, .2);
             background-image: url("https://www.transparenttextures.com/patterns/clean-textile.png");
             /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */        
-            .about__section__table{
+            @at-root .about__section__table{
                 &, th, td{
                     border-color: $clr-font;
                 }
@@ -466,24 +506,186 @@
         }
     }
 }
+@include media(md){
+    .about{
+        &__section{
+            &__table{
+                th{
+                    span{
+                        writing-mode: horizontal-tb;
+                    }
+                }
+            }
+        }
+    }
+    .message{
+        &__img{
+            display: block;
+        }
+        &__para{
+            box-sizing: border-box;
+            padding-left: .5em;
+        }
+    }
+    .mentor{
+        &__card{
+            &__img{
+                display: block;
+            }
+            &__para{
+                box-sizing: border-box;
+                padding-left: .5em;
+            }
+            &__name{
+                margin: 0;
+            }
+        }
+    }
+}
+@include media(lg){
+    .about{
+        &__hero, &__section{
+            padding: 5em calc(50% - (450 / 16)*1em);
+        }
+        &__hero{
+            &__title{
+                font-size: 2em;
+                margin-left: 0;
+            }
+        }
+    }
+}
 
 //===============================================
-//お問い合わせページ================================
+//activityページ================================
 //===============================================
-.contact{
+.activity{
     &__hero{
-        position: relative;
+        display: flex;
         min-height: 40vh;
         background-image: url($site-top+"/img/お話する会員.JPG");
         background-size:  cover;
         background-position: center;
         &__title{
-            position: absolute;
             display: inline-block;
-            bottom: .5em;
+            margin: auto auto .5em 1em;
+            width: max-content;
+            text-align: center;
+            color: white;
+            font-size: 1.5em;
+            font-weight: normal;
+            letter-spacing: .2em;
+            padding: 0 .5em;
+            background-color: rgba(black, .5);
+        }
+    }
+    &__section{
+        position: relative;
+        padding: 4em 2em;
+        &__title, &__text, .ctl-button{
+            position: relative;
+            z-index: 2;
+        }
+        &__title{
+            font-weight: normal;
+        }
+        &__text{
+            line-height: 2;
+        }
+        &__school{
+            margin-top: 2em;
+            &__title{
+                font-weight: normal;
+                margin: .5em 0;
+            }
+            
+        }
+        &.practice, &.access{
+            background-color: rgba($clr-base, .2);
+        }
+        img{
+            display: block;
+            width: 100%;
+        }
+    }
+    &__inter-section{
+        display: flex;
+        background-color: rgba($clr-base, .2);
+        svg{
+            height: 4em;
+            max-width: 50%;
+            margin: auto;
+            fill: $clr-accent;
+        }
+    }
+    .calender-wrapper{
+        position: relative;
+        margin: 0 -2em;
+        height: 0;
+        padding-top: 150%;
+        iframe{
+            position: absolute;
+            top: 0;
             left: 0;
-            right: 0;
-            margin: 0 .5em;
+            width: 100%;
+            height: 100%;
+        }
+        @include media(sm){
+            padding-top: 100%;
+        }
+    }
+    .buttons{
+        &__button{
+            margin-bottom: 1.5em;
+        }
+    }
+}
+@include media(md){
+    .activity{
+        &__section{
+            &__school{
+                &__desc{
+                    box-sizing: border-box;
+                    padding-left: .5em;
+                }
+                &__title{
+                    margin-top: 0;
+                }
+            }
+        }
+    }
+}
+@include media(lg){
+    .activity{
+        &__hero, &__section{
+            padding: 5em calc(50% - (450 / 16)*1em);
+        }
+        &__hero{
+            &__title{
+                font-size: 2em;
+                margin-left: 0;
+            }
+        }
+        .calender-wrapper{
+            margin: 0;
+            padding-top: 75%;
+        }
+    }
+}
+
+//===============================================
+//contactページ================================
+//===============================================
+.contact{
+    &__hero{
+        display: flex;
+        min-height: 40vh;
+        background-image: url($site-top+"/img/お話する会員.JPG");
+        background-size:  cover;
+        background-position: center;
+        &__title{
+            display: inline-block;
+            margin: auto auto .5em 1em;
             width: max-content;
             text-align: center;
             color: white;
@@ -496,7 +698,7 @@
     }
     &__form{
         &__text{
-            padding: 0 1em;
+            padding: 0 2em;
         }
         &__wrapper{
             position: relative;
@@ -504,7 +706,7 @@
             max-width: 700px;
             height: 0;
             padding-top: 520px;
-            margin: 0 auto;
+            margin: 1em auto;
             margin-top: 2em;
             overflow:auto; 
             -webkit-overflow-scrolling:touch;
@@ -517,6 +719,26 @@
                 height: 100%;
                 border:none;
                 display:block;
+            }
+        }
+    }
+}
+@include media(lg){
+    .contact{
+        &__hero, &__form{
+            padding: 5em calc(50% - (450 / 16)*1em);
+        }
+        &__hero{
+            &__title{
+                font-size: 2em;
+            }
+        }
+        &__form{
+            &__text{
+                text-align: center;
+            }
+            &__wrapper{
+                padding-top: 100%;
             }
         }
     }

@@ -1,0 +1,117 @@
+<%- include("./ejs/_variables.ejs") -%>
+<% var $pageName = $site.activity.title; %>
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title><%= $pageName+"|"+$site.title %></title>
+    <%########### pure.css読み込み ################%>
+    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.1/build/pure-min.css" integrity="sha384-oAOxQR6DkCoMliIh8yFnu25d7Eq/PHS21PClpwjOTeU2jRSq11vu66rf90/cZr47" crossorigin="anonymous">
+    <!--[if lte IE 8]>
+    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.1/build/grids-responsive-old-ie-min.css">
+    <![endif]-->
+    <!--[if gt IE 8]><!-->
+    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.1/build/grids-responsive-min.css">
+    <!--<![endif]-->
+    <%########### pure.css読み込みここまで ################%>
+    <% for (var i = 0; i < Object.keys($css.all).length; i++) { %>
+        <link rel="stylesheet" href="<%=$css["all"]["num"+(i+1)] %>">
+    <% } %>
+</head>
+<body class="activity">
+    <%- include("./ejs/_drawer.ejs") -%>
+    <div class="contents-wrapper">
+        <header class="activity__hero">
+            <h1 class="activity__hero__title"><%= $pageName %></h1>
+        </header>
+        <section class="activity__section schedule" id="schedule">
+            <h2 class="activity__section__title">活動スケジュール</h2>
+            <p class="activity__section__text">親譲りの無鉄砲で小供の時から損ばかりしている。小学校に居る時分学校の二階から飛び降りて一週間ほど腰を抜かした事がある。なぜそんな無闇をしたと聞く人があるかも知れぬ。別段深い理由でもない。新築の二階から</p>
+            <div class="calender-wrapper">
+                <iframe src="https://calendar.google.com/calendar/b/1/embed?height=600&amp;wkst=1&amp;bgcolor=%23ffffff&amp;ctz=Asia%2FTokyo&amp;src=Y290b2xpd21vLmNvbV8wb3BlMTFqaDB2dDU3NTRjbzdyazFnYjZnNEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;src=amEuamFwYW5lc2UjaG9saWRheUBncm91cC52LmNhbGVuZGFyLmdvb2dsZS5jb20&amp;color=%23A87070&amp;color=%231F753C&amp;showTz=0&amp;showCalendars=0&amp;showPrint=0&amp;showTabs=0&amp;showNav=1&amp;showDate=1" style="border-width:0" width="800" height="650" frameborder="0" scrolling="no"></iframe>
+            </div>
+        </section>
+        <section class="activity__section practice" id="practice">
+            <h2 class="activity__section__title">稽古について</h2>
+            <p class="activity__section__text">親譲りの無鉄砲で小供の時から損ばかりしている。小学校に居る時分学校の二階から飛び降りて一週間ほど腰を抜かした事がある。なぜそんな無闇をしたと聞く人があるかも知れぬ。別段深い理由でもない。新築の二階から</p>
+            <div class="buttons pure-g">
+                <div class="buttons__button pure-u pure-u-1 pure-u-sm-1-2">
+                    <a class="ctl-button" href="<%= $site.top_url+$site.contact.slug+".html" %>">
+                        <i></i><span>見学のお申込み</span>
+                    </a>
+                </div>
+                <div class="buttons__button pure-u pure-u-1 pure-u-sm-1-2">
+                    <a class="ctl-button" href="<%= $site.top_url+$site.about.slug+".html#mentor" %>">
+                        <i></i><span>指導者紹介</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+        <div class="activity__inter-section">
+            <%- include("./ejs/_tonbo.svg.ejs") %>
+        </div>
+        <section class="activity__section access" id="access">
+            <h2 class="activity__section__title">アクセス</h2>
+            <p class="activity__section__text">親譲りの無鉄砲で小供の時から損ばかりしている。小学校に居る時分学校の二階から飛び降りて一週間ほど腰を抜かした事がある。なぜそんな無闇をしたと聞く人があるかも知れぬ。別段深い理由でもない。新築の二階から</p>
+            <a class="ctl-button" href="<%= $site.top_url+$site.contact.slug+".html" %>">
+                <i></i><span>お問い合わせ</span>
+            </a>
+            <div class="activity__section__school pure-g">
+                <div class="activity__section__school__img pure-u pure-u-1 pure-u-md-1-2 pure-u-lg-14-24">
+                    <img src="./img/nishi-primary-school.jpg" alt="ふじみ野市立 西小学校">
+                </div>
+                <div class="activity__section__school__desc pure-u pure-u-1 pure-u-md-1-2 pure-u-lg-10-24">
+                    <h3 class="activity__section__school__title">ふじみ野市立 西小学校</h3>
+                    <p>稽古日：毎週日曜日</p>        
+                    <p>〒356-0005<br>埼玉県ふじみ野市西2-10-25</p>
+                    <div class="buttons pure-g">
+                        <div class="buttons__button pure-u pure-u-1 pure-u-sm-1-2 pure-u-md-1">
+                            <a class="ctl-button" rel="nofollow" target="_blank" href="https://goo.gl/maps/57V95tJbk7JYdyAN6">
+                                <i></i><span>場所をGoogleマップで開く</span>
+                            </a>
+                        </div>
+                        <div class="buttons__button pure-u pure-u-1 pure-u-sm-1-2 pure-u-md-1">
+                            <a class="ctl-button" rel="nofollow" target="_blank" href="http://www.fujimino.ed.jp/n/index.html">
+                                <i></i><span>西小学校HPはこちら</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="activity__section__school pure-g">
+                <div class="activity__section__school__img pure-u pure-u-1 pure-u-md-1-2 pure-u-lg-14-24">
+                    <img src="./img/nishi-primary-school.jpg" alt="ふじみ野市立 鶴ヶ丘小学校">
+                </div>
+                <div class="activity__section__school__desc pure-u pure-u-1 pure-u-md-1-2 pure-u-lg-10-24">
+                    <h3 class="activity__section__school__title">ふじみ野市立 鶴ヶ丘小学校</h3>
+                    <p>稽古日：毎週金曜日</p>
+                    <p>〒356-0045<br>埼玉県ふじみ野市鶴ヶ岡1-3-1</p>
+                    <div class="buttons pure-g">
+                        <div class="buttons__button pure-u pure-u-1 pure-u-sm-1-2 pure-u-md-1">
+                            <a class="ctl-button" rel="nofollow" target="_blank" href="https://goo.gl/maps/s8Vs8EkH6N51eav79">
+                                <i></i><span>場所をGoogleマップで開く</span>
+                            </a>
+                        </div>
+                        <div class="buttons__button pure-u pure-u-1 pure-u-sm-1-2 pure-u-md-1">
+                            <a class="ctl-button" rel="nofollow" target="_blank" href="http://www.fujimino.ed.jp/turu/index.html">
+                                <i></i><span>鶴ヶ丘小学校HPはこちら</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="activity__section event" id="event">
+            <h2 class="activity__section__title">年間行事</h2>
+            <p class="activity__section__text">親譲りの無鉄砲で小供の時から損ばかりしている。小学校に居る時分学校の二階から飛び降りて一週間ほど腰を抜かした事がある。なぜそんな無闇をしたと聞く人があるかも知れぬ。別段深い理由でもない。新築の二階から</p>
+            <a class="ctl-button" href="<%= $site.top_url+$site.contact.slug+".html" %>">
+                <i></i><span>お問い合わせ</span>
+            </a>
+        </section>
+        <%- include("./ejs/_footer.ejs") %>
+    </div>
+</body>
+</html>

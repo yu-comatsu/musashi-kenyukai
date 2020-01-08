@@ -21,7 +21,7 @@
         <link rel="stylesheet" href="<%=$css["all"]["num"+(i+1)] %>">
     <% } %>
 </head>
-<body>
+<body class="about">
     <%- include("./ejs/_drawer.ejs") -%>
     <div class="contents-wrapper">
         <header class="about__hero">
@@ -30,12 +30,12 @@
         <section class="about__section about-us" id="about-us">
             <h2 class="about__section__title">高みを目指して</h2>
             <p class="about__section__text">武蔵剣友会の団体理念など。親譲りの無鉄砲で小供の時から損ばかりしている。小学校に居る時分学校の二階から飛び降りて一週間ほど腰を抜かした事がある。なぜそんな無闇をしたと聞く人があるかも知れぬ。別段深い理由でもない。新築の二階から</p>
-            <a class="ctl-button" href="">
+            <a class="ctl-button" href="<%= $site.top_url+$site.activity.slug+".html" %>">
                 <i></i><span>活動について</span>
             </a>
         </section>
         <section class="about__section award" id="award">
-            <h2 class="about__section__title">活動実績</h2>
+            <h2 class="about__section__title">活動実績・沿革</h2>
             <p class="about__section__text">武蔵剣友会の大会実績や表彰、沿革的なできごとなど。</p>
             <table class="about__section__table pure-table pure-table-horizontal">
                 <thead>
@@ -82,12 +82,17 @@
         </section>
         <section class="about__section message" id="message">
             <h2 class="about__section__title">代表挨拶</h2>
-            <img src="./img/daihyo.jpg" alt="代表近影">
-            <span class="president-name">会長　武蔵 太郎</span>
-            <p class="about__section__text">会長のメッセージ。親譲りの無鉄砲で小供の時から損ばかりしている。小学校に居る時分学校の二階から飛び降りて一週間ほど腰を抜かした事がある。なぜそんな無闇をしたと聞く人があるかも知れぬ。別段深い理由でもない。新築の二階から</p>
-            <a class="ctl-button" href="">
-                <i></i><span>活動の詳細はこちら</span>
-            </a>
+            <div class="pure-g">
+                <div class="message__img pure-u pure-u-1 pure-u-md-1-2 pure-u-lg-14-24">
+                    <img src="./img/daihyo.jpg" alt="代表近影">
+                </div>
+                <div class="message__para pure-u pure-u-1 pure-u-md-1-2 pure-u-lg-10-24">                    <span class="president-name">会長　武蔵 太郎</span>
+                    <p class="about__section__text">会長のメッセージ。親譲りの無鉄砲で小供の時から損ばかりしている。小学校に居る時分学校の二階から飛び降りて一週間ほど腰を抜かした事がある。なぜそんな無闇をしたと聞く人があるかも知れぬ。別段深い理由でもない。新築の二階から</p>
+                    <a class="ctl-button" href="<%= $site.top_url+$site.activity.slug+".html" %>">
+                        <i></i><span>活動の詳細はこちら</span>
+                    </a>
+                </div>
+            </div>
         </section>
         <div class="about__inter-section">
             <%- include("./ejs/_tonbo.svg.ejs") %>
@@ -95,22 +100,35 @@
         <section class="about__section mentor" id="mentor">
             <h2 class="about__section__title">指導者紹介</h2>
             <p class="about__section__text">武蔵剣友会で指導を行う先生方をご紹介します。</p>
-            <div class="mentor__card">
-                <img class="mentor__card__img" src="./img/daihyo.jpg" alt="角屋 弘 先生">
-                <span class="mentor__card__name">角屋 弘 先生</span>
-                <p class="mentor__card__text">ひとこと。親譲りの無鉄砲で小供の時から損ばかりしている。小学校に居る時分学校の二階から飛び降りて一週間ほど腰を抜かした事がある。なぜそんな無闇をしたと聞く人があるかも知れぬ。別段深い理由でもない。新築の二階から</p>
+            <div class="mentor__card pure-g">
+                <div class="mentor__card__img pure-u pure-u-1 pure-u-md-1-2 pure-u-lg-14-24">
+                    <img class="mentor__card__img" src="./img/daihyo.jpg" alt="角屋 弘 先生">
+                </div>
+                <div class="mentor__card__para pure-u pure-u-1 pure-u-md-1-2 pure-u-lg-10-24">
+                    <h3 class="mentor__card__name">角屋 弘 七段</h3>
+                    <p class="mentor__card__text">ひとこと。親譲りの無鉄砲で小供の時から損ばかりしている。小学校に居る時分学校の二階から飛び降りて一週間ほど腰を抜かした事がある。なぜそんな無闇をしたと聞く人があるかも知れぬ。別段深い理由でもない。新築の二階から</p>
+                </div>
             </div>
-            <div class="mentor__card">
-                <img class="mentor__card__img" src="./img/daihyo.jpg" alt="角屋 弘 先生">
-                <span class="mentor__card__name">角屋 弘 先生</span>
-                <p class="mentor__card__text">ひとこと。親譲りの無鉄砲で小供の時から損ばかりしている。小学校に居る時分学校の二階から飛び降りて一週間ほど腰を抜かした事がある。なぜそんな無闇をしたと聞く人があるかも知れぬ。別段深い理由でもない。新築の二階から</p>
+            <div class="mentor__card pure-g">
+                <div class="mentor__card__img pure-u pure-u-1 pure-u-md-1-2 pure-u-lg-14-24">
+                    <img class="mentor__card__img" src="./img/daihyo.jpg" alt="角屋 弘 先生">
+                </div>
+                <div class="mentor__card__para pure-u pure-u-1 pure-u-md-1-2 pure-u-lg-10-24">
+                    <h3 class="mentor__card__name">角屋 弘 六段</h3>
+                    <span class="mentor__card__job-title">〇〇会役員 埼玉県〇〇会連盟理事</span>
+                    <p class="mentor__card__text">ひとこと。親譲りの無鉄砲で小供の時から損ばかりしている。小学校に居る時分学校の二階から飛び降りて一週間ほど腰を抜かした事がある。なぜそんな無闇をしたと聞く人があるかも知れぬ。別段深い理由でもない。新築の二階から</p>
+                </div>
             </div>
-            <div class="mentor__card">
-                <img class="mentor__card__img" src="./img/daihyo.jpg" alt="角屋 弘 先生">
-                <span class="mentor__card__name">角屋 弘 先生</span>
-                <p class="mentor__card__text">ひとこと。親譲りの無鉄砲で小供の時から損ばかりしている。小学校に居る時分学校の二階から飛び降りて一週間ほど腰を抜かした事がある。なぜそんな無闇をしたと聞く人があるかも知れぬ。別段深い理由でもない。新築の二階から</p>
+            <div class="mentor__card pure-g">
+                <div class="mentor__card__img pure-u pure-u-1 pure-u-md-1-2 pure-u-lg-14-24">
+                    <img class="mentor__card__img" src="./img/daihyo.jpg" alt="角屋 弘 先生">
+                </div>
+                <div class="mentor__card__para pure-u pure-u-1 pure-u-md-1-2 pure-u-lg-10-24">
+                    <h3 class="mentor__card__name">角屋 弘 先生</h3>
+                    <p class="mentor__card__text">ひとこと。親譲りの無鉄砲で小供の時から損ばかりしている。小学校に居る時分学校の二階から飛び降りて一週間ほど腰を抜かした事がある。なぜそんな無闇をしたと聞く人があるかも知れぬ。別段深い理由でもない。新築の二階から</p>
+                </div>
             </div>
-            <a class="ctl-button" href="">
+            <a class="ctl-button" href="<%= $site.top_url+$site.activity.slug+".html#practice" %>">
                 <i></i><span>稽古の詳細はこちら</span>
             </a>
         </section>
@@ -143,7 +161,6 @@
                     </tr>
                 </tbody>
             </table>
-
             <a class="ctl-button" href="<%= $site.top_url+$site.contact.slug+".html" %>">
                 <i></i><span>見学・入会のお申込み</span>
             </a>
