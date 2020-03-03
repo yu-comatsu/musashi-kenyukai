@@ -20,6 +20,8 @@
     <% for (var i = 0; i < Object.keys($css.all).length; i++) { %>
         <link rel="stylesheet" href="<%=$css["all"]["num"+(i+1)] %>">
     <% } %>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="./js/sal.js"></script>
 </head>
 <body>
     <%- include("./ejs/_drawer.ejs") -%>
@@ -27,65 +29,147 @@
         <header class="hero">
             <h1 class="hero__logo"><%= $site.title %></h1>
             <p class="hero__text">親譲りの無鉄砲で小供の時から損ばかりしている。小学校に居る時分学校の二階から飛び降りて一週間ほど腰を抜かした事がある。なぜそんな無闇をしたと聞く人があるかも知れぬ。別段深い理由でもない。新築の二階から</p>
+            <i class="hero__scroll material-icons">arrow_downward</i>
         </header>
         <section class="top-section intro-about">
-            <%- include("./ejs/_tonbo.svg.ejs") %>
-            <h2 class="top-section__title">技を磨き　志を高く</h2>
-            <p class="top-section__text">親譲りの無鉄砲で小供の時から損ばかりしている。小学校に居る時分学校の二階から飛び降りて一週間ほど腰を抜かした事がある。なぜそんな無闇をしたと聞く人があるかも知れぬ。別段深い理由でもない。新築の二階から</p>
-            <a class="ctl-button" href="<%= $site.top_url+$site.about.slug+".html" %>">
-                <i></i><span>武蔵剣友会について</span>
-            </a>
+            <div 
+                data-sal="fade"
+                data-sal-delay="300"
+                data-sal-duration="1000"
+                data-sal-easing="easeInOutCubic"
+            >
+                <%- include("./ejs/_tonbo.svg.ejs") %>
+                <h2 class="top-section__title">技を磨き　志を高く</h2>
+                <p class="top-section__text">親譲りの無鉄砲で小供の時から損ばかりしている。小学校に居る時分学校の二階から飛び降りて一週間ほど腰を抜かした事がある。なぜそんな無闇をしたと聞く人があるかも知れぬ。別段深い理由でもない。新築の二階から</p>
+                <a class="ctl-button" href="<%= $site.top_url+$site.about.slug+".html" %>">
+                    <i></i><span>武蔵剣友会について</span>
+                </a>
+            </div> 
         </section>
         <div class="inter-section">
-            <img class="rellax" data-rellax-speed="-1" data-rellax-percentage="0.3" src="./img/稽古風景1.JPG" alt="稽古風景">
+            <picture>
+                <img
+                class="rellax"
+                data-rellax-speed="-1" 
+                data-rellax-percentage="0.7" 
+                srcset="
+                ./img/keiko1_csguyz_c_scale,w_330.jpg 330w,
+                ./img/keiko1_csguyz_c_scale,w_462.jpg 462w,
+                ./img/keiko1_csguyz_c_scale,w_577.jpg 577w,
+                ./img/keiko1_csguyz_c_scale,w_680.jpg 680w,
+                ./img/keiko1_csguyz_c_scale,w_775.jpg 775w,
+                ./img/keiko1_csguyz_c_scale,w_863.jpg 863w,
+                ./img/keiko1_csguyz_c_scale,w_947.jpg 947w,
+                ./img/keiko1_csguyz_c_scale,w_1023.jpg 1023w,
+                ./img/keiko1_csguyz_c_scale,w_1098.jpg 1098w,
+                ./img/keiko1_csguyz_c_scale,w_1170.jpg 1170w,
+                ./img/keiko1_csguyz_c_scale,w_1241.jpg 1241w,
+                ./img/keiko1_csguyz_c_scale,w_1267.jpg 1267w,
+                ./img/keiko1_csguyz_c_scale,w_1920.jpg 1920w"
+                src="./img/keiko1_csguyz_c_scale,w_1920.jpg"
+                alt="">
+                </picture>
         </div>
         <section class="top-section intro-keiko">
-            <h2 class="top-section__title">子供から大人まで</h2>
-            <p class="top-section__text">親譲りの無鉄砲で小供の時から損ばかりしている。小学校に居る時分学校の二階から飛び降りて一週間ほど腰を抜かした事がある。なぜそんな無闇をしたと聞く人があるかも知れぬ。別段深い理由でもない。新築の二階から</p>
-            <div class="buttons pure-g">
-                <div class="buttons__button pure-u pure-u-1 pure-u-sm-1-2">
-                    <a class="ctl-button" href="<%= $site.top_url+$site.activity.slug+".html#practice" %>">
-                        <i></i><span>稽古について</span>
-                    </a>
-                </div>
-                <div class="buttons__button pure-u pure-u-1 pure-u-sm-1-2">
-                    <a class="ctl-button" href="<%= $site.top_url+$site.about.slug+".html#mentor" %>">
-                        <i></i><span>指導者紹介</span>
-                    </a>
+            <div 
+                data-sal="fade"
+                data-sal-delay="300"
+                data-sal-duration="1000"
+                data-sal-easing="easeInOutCubic"
+            >
+                <h2 class="top-section__title">子供から大人まで</h2>
+                <p class="top-section__text">親譲りの無鉄砲で小供の時から損ばかりしている。小学校に居る時分学校の二階から飛び降りて一週間ほど腰を抜かした事がある。なぜそんな無闇をしたと聞く人があるかも知れぬ。別段深い理由でもない。新築の二階から</p>
+                <div class="buttons pure-g">
+                    <div class="buttons__button pure-u pure-u-1 pure-u-sm-1-2">
+                        <a class="ctl-button" href="<%= $site.top_url+$site.activity.slug+".html#practice" %>">
+                            <i></i><span>稽古について</span>
+                        </a>
+                    </div>
+                    <div class="buttons__button pure-u pure-u-1 pure-u-sm-1-2">
+                        <a class="ctl-button" href="<%= $site.top_url+$site.about.slug+".html#mentor" %>">
+                            <i></i><span>指導者紹介</span>
+                        </a>
+                    </div>
                 </div>
             </div>
         </section>
         <div class="inter-section">
-            <img class="rellax" data-rellax-speed="-1" data-rellax-percentage="0.3" 
-                src="./img/keiko2_1440.jpg"
-                srcset="./img/keiko2_568.jpg 568w,
-                        ./img/keiko2_1024.jpg 1024w,
-                        ./img/keiko2_1440.jpg 1440w,
-                        ./img/keiko2_1920.jpg 1920w"
-                alt="稽古風景">
+                <picture>
+                    <img class="rellax" 
+                    data-rellax-speed="-1"
+                    data-rellax-percentage="0.7" 
+                    srcset="
+                    ./img/keiko2_molayu_c_scale,w_330.jpg 330w,
+                    ./img/keiko2_molayu_c_scale,w_453.jpg 453w,
+                    ./img/keiko2_molayu_c_scale,w_559.jpg 559w,
+                    ./img/keiko2_molayu_c_scale,w_653.jpg 653w,
+                    ./img/keiko2_molayu_c_scale,w_739.jpg 739w,
+                    ./img/keiko2_molayu_c_scale,w_820.jpg 820w,
+                    ./img/keiko2_molayu_c_scale,w_898.jpg 898w,
+                    ./img/keiko2_molayu_c_scale,w_974.jpg 974w,
+                    ./img/keiko2_molayu_c_scale,w_1046.jpg 1046w,
+                    ./img/keiko2_molayu_c_scale,w_1113.jpg 1113w,
+                    ./img/keiko2_molayu_c_scale,w_1184.jpg 1184w,
+                    ./img/keiko2_molayu_c_scale,w_1259.jpg 1259w,
+                    ./img/keiko2_molayu_c_scale,w_1920.jpg 1920w"
+                    src="./img/keiko2_molayu_c_scale,w_1920.jpg"
+                    alt="">
+                </picture>
         </div>
         <section class="top-section intro-events">
-            <h2 class="top-section__title">仲間と楽しく</h2>
-            <p class="top-section__text">親譲りの無鉄砲で小供の時から損ばかりしている。小学校に居る時分学校の二階から飛び降りて一週間ほど腰を抜かした事がある。なぜそんな無闇をしたと聞く人があるかも知れぬ。別段深い理由でもない。新築の二階から</p>
-            <a class="ctl-button" href="<%= $site.top_url+$site.activity.slug+".html#event" %>">
-                <i></i><span>年間行事について</span>
-            </a>
+            <div 
+                data-sal="fade"
+                data-sal-delay="300"
+                data-sal-duration="1000"
+                data-sal-easing="easeInOutCubic"
+            >
+                <h2 class="top-section__title">仲間と楽しく</h2>
+                <p class="top-section__text">親譲りの無鉄砲で小供の時から損ばかりしている。小学校に居る時分学校の二階から飛び降りて一週間ほど腰を抜かした事がある。なぜそんな無闇をしたと聞く人があるかも知れぬ。別段深い理由でもない。新築の二階から</p>
+                <a class="ctl-button" href="<%= $site.top_url+$site.activity.slug+".html#event" %>">
+                    <i></i><span>年間行事について</span>
+                </a>
+            </div>
         </section>
         <div class="inter-section">
-            <img class="rellax" data-rellax-speed="-1" data-rellax-percentage="0.35" src="./img/稽古風景3.JPG" alt="稽古風景">
+            <picture>
+                <img class="rellax" 
+                data-rellax-speed="-1" 
+                data-rellax-percentage="0.6" 
+                srcset="
+                ./img/keiko3_goolc2_c_scale,w_330.jpg 330w,
+                ./img/keiko3_goolc2_c_scale,w_440.jpg 440w,
+                ./img/keiko3_goolc2_c_scale,w_534.jpg 534w,
+                ./img/keiko3_goolc2_c_scale,w_622.jpg 622w,
+                ./img/keiko3_goolc2_c_scale,w_695.jpg 695w,
+                ./img/keiko3_goolc2_c_scale,w_764.jpg 764w,
+                ./img/keiko3_goolc2_c_scale,w_831.jpg 831w,
+                ./img/keiko3_goolc2_c_scale,w_894.jpg 894w,
+                ./img/keiko3_goolc2_c_scale,w_957.jpg 957w,
+                ./img/keiko3_goolc2_c_scale,w_1015.jpg 1015w,
+                ./img/keiko3_goolc2_c_scale,w_1074.jpg 1074w,
+                ./img/keiko3_goolc2_c_scale,w_1127.jpg 1127w,
+                ./img/keiko3_goolc2_c_scale,w_1181.jpg 1181w,
+                ./img/keiko3_goolc2_c_scale,w_1245.jpg 1245w,
+                ./img/keiko3_goolc2_c_scale,w_1920.jpg 1920w"
+                src="./img/keiko3_goolc2_c_scale,w_1920.jpg"
+                alt="">
+            </picture>
         </div>
         <section class="top-section intro-events">
-            <h2 class="top-section__title">随時見学できます</h2>
-            <p class="top-section__text">親譲りの無鉄砲で小供の時から損ばかりしている。小学校に居る時分学校の二階から飛び降りて一週間ほど腰を抜かした事がある。なぜそんな無闇をしたと聞く人があるかも知れぬ。別段深い理由でもない。新築の二階から</p>
-            <a class="ctl-button" href="<%= $site.top_url+$site.contact.slug+".html" %>">
-                <i></i><span>お問い合わせはこちら</span>
-            </a>
+            <div 
+                data-sal="fade"
+                data-sal-delay="300"
+                data-sal-duration="1000"
+                data-sal-easing="easeInOutCubic"
+            >
+                <h2 class="top-section__title">随時見学できます</h2>
+                <p class="top-section__text">親譲りの無鉄砲で小供の時から損ばかりしている。小学校に居る時分学校の二階から飛び降りて一週間ほど腰を抜かした事がある。なぜそんな無闇をしたと聞く人があるかも知れぬ。別段深い理由でもない。新築の二階から</p>
+                <a class="ctl-button" href="<%= $site.top_url+$site.contact.slug+".html" %>">
+                    <i></i><span>お問い合わせはこちら</span>
+                </a>
+            </div>
         </section>
         <%- include("./ejs/_footer.ejs") %>
     </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/rellax/1.9.1/rellax.min.js"></script>
-    <script>
-        var rellax = new Rellax('.rellax');
-    </script>
 </body>
 </html>

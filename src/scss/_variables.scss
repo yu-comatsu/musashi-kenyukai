@@ -30,11 +30,21 @@ $clr-accent: #E62B1E;
 $clr-base: #e5d2aa;
 $clr-font: black;
 
+//===============================================
+//アニメーション==================================
+//===============================================
+@keyframes fadeIn {
+    0% {opacity: 0}
+    100% {opacity: 1}
+}
+@mixin fadeIn($delay: 0s) {
+    animation: fadeIn 2s ease $delay 1 normal;
+}
 
 
 //===============================================
 //開発用==================================
 //===============================================
 $placeholder : "https://via.placeholder.com/";
-//$site-top: "..";
-$site-top: "https://musashi-kendo.netlify.com";
+$site-top: "..";
+//$site-top: "https://musashi-kendo.netlify.com";

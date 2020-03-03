@@ -36,7 +36,7 @@
         transform-origin: right top;
         transition: transform .2s;
     }
-    &:hover::after{
+    &:hover::after, &:focus::after{
         transform-origin: left top;
         transform: scale(1, 1);
     }
@@ -262,19 +262,9 @@
     display: flex;
     height: 100vh;
     //background-image: url($placeholder+"900x1600");
-    background-image: url($site-top+"/img/つば競り合い.JPG");
+    background-image: url($site-top+"/img/hero-long.jpg");
     background-size:  cover;
     background-position: center;
-    &::before{
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        //background-color: red;
-        opacity: 0.5;
-    }
     &__logo{
         position: relative;
         writing-mode: vertical-rl;
@@ -284,9 +274,34 @@
         margin: 2.5em auto 1em 1em;
         padding: .5em .2em;
         background-color: hsla(0, 0%, 0%, .5);
+        @include fadeIn;
+        z-index: 5;
     }
     &__text{
         display: none;
+    }
+    &__scroll.material-icons{
+        display: block;
+        width: fit-content;
+        font-size: 4rem;
+        color: white;
+        position: absolute;
+        right: 0;
+        left: 0;
+        bottom: .5rem;
+        margin: auto;
+        z-index: 5;
+    }
+    &__img{
+        source, img{
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            object-fit: cover;
+        }
     }
 }
 @include media(md){
@@ -298,6 +313,7 @@
 }
 @include media(lg){
     .hero{
+        background-image: url($site-top+"/img/hero-wide.jpg");
         &__logo{
             font-size: 4em;
             margin: auto;
@@ -377,7 +393,7 @@
 }
 //インターセクション共通設定=============================================
 .inter-section{
-    height: 8em;
+    height: 6em;
     overflow: hidden;
     position: relative;
     &::before{
@@ -397,14 +413,14 @@
         z-index: 1;
     }
 }
-@include media(sm){
+@include media(md){
     .inter-section{
         height: 11em;
     }
 }
-@include media(md){
+@include media(lg){
     .inter-section{
-        height: 15em;
+        height: 13em;
     }
 }
 

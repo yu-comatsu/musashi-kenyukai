@@ -22,6 +22,10 @@
     
         <link rel="stylesheet" href="./css/musashi.css">
     
+        <link rel="stylesheet" href="./css/sal.css">
+    
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="./js/sal.js"></script>
 </head>
 <body>
     
@@ -57,61 +61,147 @@
         <header class="hero">
             <h1 class="hero__logo">武蔵剣友会</h1>
             <p class="hero__text">親譲りの無鉄砲で小供の時から損ばかりしている。小学校に居る時分学校の二階から飛び降りて一週間ほど腰を抜かした事がある。なぜそんな無闇をしたと聞く人があるかも知れぬ。別段深い理由でもない。新築の二階から</p>
+            <i class="hero__scroll material-icons">arrow_downward</i>
         </header>
         <section class="top-section intro-about">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 45.95 63.144">
+            <div 
+                data-sal="fade"
+                data-sal-delay="300"
+                data-sal-duration="1000"
+                data-sal-easing="easeInOutCubic"
+            >
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 45.95 63.144">
     <path d="M4.017 32.973c.995-.386 1.276.444 1.46 1.36.183.914-.655 1.44-1.207 1.646-.555.21-1.632-.17-1.74-.802-.15-.86.491-1.818 1.487-2.204M2.952 28.655c.748-.272 1.924.517 1.9 1.548-.023 1.034-.908 1.05-1.307 1.228-.399.18-1.26-.544-1.335-1.11-.078-.564-.002-1.394.742-1.666M4.548 18.972C3.387 15.022-.3 9.285.02 4.75c.485-6.877 6.2 5.45 7.075 7.762.414 1.096 2.438 7.306 2.14 10.76-.3 3.453-3.402.06-4.687-4.299M8.426 60.004c-1.085-10.921 2.297-27.968 4.422-22.75 0 0 1.435 7.213 2.062 11.385.626 4.17-5.475 21.516-6.484 11.365M13.582 18.12c-.154-2.983-3.818-14.613-1.58-17.357 2.238-2.744 4.484 2.457 5.253 6.992.767 4.534-.084 12.097-.084 12.097-.875 4.69-3.438 1.247-3.589-1.732M18.197 37.641s3.433 6.922 4.294 11.515c.862 4.59.565 10.335-2.49 8.495-3.054-1.84-3.674-14.21-4.566-17.106-.895-2.896.306-7.072 2.762-2.904M24.975 25.396c7.117-2.295 14.664-6.63 16.487-8.641 1.82-2.01 5.151-2.654 4.372-1-.78 1.653-3.135 3.806-10.087 7.018-6.952 3.214-16.17 6.787-16.17 6.787l-.378.101c-.229.062-2.58.688-3.396 1.306-.812.616-2.567 1.644-3.958 1.61-1.394-.03-5.154-3.446-.94-4.728 4.214-1.28 6.953-.16 14.07-2.453"/>
 </svg>
-            <h2 class="top-section__title">技を磨き　志を高く</h2>
-            <p class="top-section__text">親譲りの無鉄砲で小供の時から損ばかりしている。小学校に居る時分学校の二階から飛び降りて一週間ほど腰を抜かした事がある。なぜそんな無闇をしたと聞く人があるかも知れぬ。別段深い理由でもない。新築の二階から</p>
-            <a class="ctl-button" href="https://musashi-kendo.netlify.com/about.html">
-                <i></i><span>武蔵剣友会について</span>
-            </a>
+                <h2 class="top-section__title">技を磨き　志を高く</h2>
+                <p class="top-section__text">親譲りの無鉄砲で小供の時から損ばかりしている。小学校に居る時分学校の二階から飛び降りて一週間ほど腰を抜かした事がある。なぜそんな無闇をしたと聞く人があるかも知れぬ。別段深い理由でもない。新築の二階から</p>
+                <a class="ctl-button" href="https://musashi-kendo.netlify.com/about.html">
+                    <i></i><span>武蔵剣友会について</span>
+                </a>
+            </div> 
         </section>
         <div class="inter-section">
-            <img class="rellax" data-rellax-speed="-1" data-rellax-percentage="0.3" src="./img/稽古風景1.JPG" alt="稽古風景">
+            <picture>
+                <img
+                class="rellax"
+                data-rellax-speed="-1" 
+                data-rellax-percentage="0.7" 
+                srcset="
+                ./img/keiko1_csguyz_c_scale,w_330.jpg 330w,
+                ./img/keiko1_csguyz_c_scale,w_462.jpg 462w,
+                ./img/keiko1_csguyz_c_scale,w_577.jpg 577w,
+                ./img/keiko1_csguyz_c_scale,w_680.jpg 680w,
+                ./img/keiko1_csguyz_c_scale,w_775.jpg 775w,
+                ./img/keiko1_csguyz_c_scale,w_863.jpg 863w,
+                ./img/keiko1_csguyz_c_scale,w_947.jpg 947w,
+                ./img/keiko1_csguyz_c_scale,w_1023.jpg 1023w,
+                ./img/keiko1_csguyz_c_scale,w_1098.jpg 1098w,
+                ./img/keiko1_csguyz_c_scale,w_1170.jpg 1170w,
+                ./img/keiko1_csguyz_c_scale,w_1241.jpg 1241w,
+                ./img/keiko1_csguyz_c_scale,w_1267.jpg 1267w,
+                ./img/keiko1_csguyz_c_scale,w_1920.jpg 1920w"
+                src="./img/keiko1_csguyz_c_scale,w_1920.jpg"
+                alt="">
+                </picture>
         </div>
         <section class="top-section intro-keiko">
-            <h2 class="top-section__title">子供から大人まで</h2>
-            <p class="top-section__text">親譲りの無鉄砲で小供の時から損ばかりしている。小学校に居る時分学校の二階から飛び降りて一週間ほど腰を抜かした事がある。なぜそんな無闇をしたと聞く人があるかも知れぬ。別段深い理由でもない。新築の二階から</p>
-            <div class="buttons pure-g">
-                <div class="buttons__button pure-u pure-u-1 pure-u-sm-1-2">
-                    <a class="ctl-button" href="https://musashi-kendo.netlify.com/activity.html#practice">
-                        <i></i><span>稽古について</span>
-                    </a>
-                </div>
-                <div class="buttons__button pure-u pure-u-1 pure-u-sm-1-2">
-                    <a class="ctl-button" href="https://musashi-kendo.netlify.com/about.html#mentor">
-                        <i></i><span>指導者紹介</span>
-                    </a>
+            <div 
+                data-sal="fade"
+                data-sal-delay="300"
+                data-sal-duration="1000"
+                data-sal-easing="easeInOutCubic"
+            >
+                <h2 class="top-section__title">子供から大人まで</h2>
+                <p class="top-section__text">親譲りの無鉄砲で小供の時から損ばかりしている。小学校に居る時分学校の二階から飛び降りて一週間ほど腰を抜かした事がある。なぜそんな無闇をしたと聞く人があるかも知れぬ。別段深い理由でもない。新築の二階から</p>
+                <div class="buttons pure-g">
+                    <div class="buttons__button pure-u pure-u-1 pure-u-sm-1-2">
+                        <a class="ctl-button" href="https://musashi-kendo.netlify.com/activity.html#practice">
+                            <i></i><span>稽古について</span>
+                        </a>
+                    </div>
+                    <div class="buttons__button pure-u pure-u-1 pure-u-sm-1-2">
+                        <a class="ctl-button" href="https://musashi-kendo.netlify.com/about.html#mentor">
+                            <i></i><span>指導者紹介</span>
+                        </a>
+                    </div>
                 </div>
             </div>
         </section>
         <div class="inter-section">
-            <img class="rellax" data-rellax-speed="-1" data-rellax-percentage="0.3" 
-                src="./img/keiko2_1440.jpg"
-                srcset="./img/keiko2_568.jpg 568w,
-                        ./img/keiko2_1024.jpg 1024w,
-                        ./img/keiko2_1440.jpg 1440w,
-                        ./img/keiko2_1920.jpg 1920w"
-                alt="稽古風景">
+                <picture>
+                    <img class="rellax" 
+                    data-rellax-speed="-1"
+                    data-rellax-percentage="0.7" 
+                    srcset="
+                    ./img/keiko2_molayu_c_scale,w_330.jpg 330w,
+                    ./img/keiko2_molayu_c_scale,w_453.jpg 453w,
+                    ./img/keiko2_molayu_c_scale,w_559.jpg 559w,
+                    ./img/keiko2_molayu_c_scale,w_653.jpg 653w,
+                    ./img/keiko2_molayu_c_scale,w_739.jpg 739w,
+                    ./img/keiko2_molayu_c_scale,w_820.jpg 820w,
+                    ./img/keiko2_molayu_c_scale,w_898.jpg 898w,
+                    ./img/keiko2_molayu_c_scale,w_974.jpg 974w,
+                    ./img/keiko2_molayu_c_scale,w_1046.jpg 1046w,
+                    ./img/keiko2_molayu_c_scale,w_1113.jpg 1113w,
+                    ./img/keiko2_molayu_c_scale,w_1184.jpg 1184w,
+                    ./img/keiko2_molayu_c_scale,w_1259.jpg 1259w,
+                    ./img/keiko2_molayu_c_scale,w_1920.jpg 1920w"
+                    src="./img/keiko2_molayu_c_scale,w_1920.jpg"
+                    alt="">
+                </picture>
         </div>
         <section class="top-section intro-events">
-            <h2 class="top-section__title">仲間と楽しく</h2>
-            <p class="top-section__text">親譲りの無鉄砲で小供の時から損ばかりしている。小学校に居る時分学校の二階から飛び降りて一週間ほど腰を抜かした事がある。なぜそんな無闇をしたと聞く人があるかも知れぬ。別段深い理由でもない。新築の二階から</p>
-            <a class="ctl-button" href="https://musashi-kendo.netlify.com/activity.html#event">
-                <i></i><span>年間行事について</span>
-            </a>
+            <div 
+                data-sal="fade"
+                data-sal-delay="300"
+                data-sal-duration="1000"
+                data-sal-easing="easeInOutCubic"
+            >
+                <h2 class="top-section__title">仲間と楽しく</h2>
+                <p class="top-section__text">親譲りの無鉄砲で小供の時から損ばかりしている。小学校に居る時分学校の二階から飛び降りて一週間ほど腰を抜かした事がある。なぜそんな無闇をしたと聞く人があるかも知れぬ。別段深い理由でもない。新築の二階から</p>
+                <a class="ctl-button" href="https://musashi-kendo.netlify.com/activity.html#event">
+                    <i></i><span>年間行事について</span>
+                </a>
+            </div>
         </section>
         <div class="inter-section">
-            <img class="rellax" data-rellax-speed="-1" data-rellax-percentage="0.35" src="./img/稽古風景3.JPG" alt="稽古風景">
+            <picture>
+                <img class="rellax" 
+                data-rellax-speed="-1" 
+                data-rellax-percentage="0.6" 
+                srcset="
+                ./img/keiko3_goolc2_c_scale,w_330.jpg 330w,
+                ./img/keiko3_goolc2_c_scale,w_440.jpg 440w,
+                ./img/keiko3_goolc2_c_scale,w_534.jpg 534w,
+                ./img/keiko3_goolc2_c_scale,w_622.jpg 622w,
+                ./img/keiko3_goolc2_c_scale,w_695.jpg 695w,
+                ./img/keiko3_goolc2_c_scale,w_764.jpg 764w,
+                ./img/keiko3_goolc2_c_scale,w_831.jpg 831w,
+                ./img/keiko3_goolc2_c_scale,w_894.jpg 894w,
+                ./img/keiko3_goolc2_c_scale,w_957.jpg 957w,
+                ./img/keiko3_goolc2_c_scale,w_1015.jpg 1015w,
+                ./img/keiko3_goolc2_c_scale,w_1074.jpg 1074w,
+                ./img/keiko3_goolc2_c_scale,w_1127.jpg 1127w,
+                ./img/keiko3_goolc2_c_scale,w_1181.jpg 1181w,
+                ./img/keiko3_goolc2_c_scale,w_1245.jpg 1245w,
+                ./img/keiko3_goolc2_c_scale,w_1920.jpg 1920w"
+                src="./img/keiko3_goolc2_c_scale,w_1920.jpg"
+                alt="">
+            </picture>
         </div>
         <section class="top-section intro-events">
-            <h2 class="top-section__title">随時見学できます</h2>
-            <p class="top-section__text">親譲りの無鉄砲で小供の時から損ばかりしている。小学校に居る時分学校の二階から飛び降りて一週間ほど腰を抜かした事がある。なぜそんな無闇をしたと聞く人があるかも知れぬ。別段深い理由でもない。新築の二階から</p>
-            <a class="ctl-button" href="https://musashi-kendo.netlify.com/contact.html">
-                <i></i><span>お問い合わせはこちら</span>
-            </a>
+            <div 
+                data-sal="fade"
+                data-sal-delay="300"
+                data-sal-duration="1000"
+                data-sal-easing="easeInOutCubic"
+            >
+                <h2 class="top-section__title">随時見学できます</h2>
+                <p class="top-section__text">親譲りの無鉄砲で小供の時から損ばかりしている。小学校に居る時分学校の二階から飛び降りて一週間ほど腰を抜かした事がある。なぜそんな無闇をしたと聞く人があるかも知れぬ。別段深い理由でもない。新築の二階から</p>
+                <a class="ctl-button" href="https://musashi-kendo.netlify.com/contact.html">
+                    <i></i><span>お問い合わせはこちら</span>
+                </a>
+            </div>
         </section>
         
 
@@ -125,11 +215,11 @@
         <span>&copy; 武蔵剣友会 All rights reserved.</h1>
     </div>
 </footer>
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/rellax/1.9.1/rellax.min.js"></script>
+<script>
+    var rellax = new Rellax('.rellax');
+    sal();
+</script>
     </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/rellax/1.9.1/rellax.min.js"></script>
-    <script>
-        var rellax = new Rellax('.rellax');
-    </script>
 </body>
 </html>

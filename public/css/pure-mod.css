@@ -1,4 +1,15 @@
 @charset "UTF-8";
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+@keyframes fadeIn {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
 html, .pure-g, .pure-g [class*=pure-u] {
   font-family: "Yu Mincho", "游明朝", YuMincho, "游明朝体", "ヒラギノ明朝 ProN W6", "HiraMinProN-W6", "メイリオ", sans-serif; }
 
