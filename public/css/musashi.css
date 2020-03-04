@@ -456,6 +456,8 @@
     background-color: rgba(15, 35, 80, 0.2);
     background-image: url("https://www.transparenttextures.com/patterns/clean-textile.png");
     /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */ }
+    .about__section.info .ctl-button {
+      margin-bottom: 1rem; }
     .about__section__table, .about__section__table th, .about__section__table td {
       border-color: black; }
     .about__section__table th span {
