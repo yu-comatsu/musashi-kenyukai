@@ -444,6 +444,7 @@
             font-size: 1.5em;
             padding: 0 .5em;
             background-color: rgba(black, .5);
+            @include fadeIn;
         }
     }
     &__section{

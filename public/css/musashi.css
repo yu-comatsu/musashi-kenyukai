@@ -417,7 +417,9 @@
     font-weight: normal;
     font-size: 1.5em;
     padding: 0 .5em;
-    background-color: rgba(0, 0, 0, 0.5); }
+    background-color: rgba(0, 0, 0, 0.5);
+    -webkit-animation: fadeIn 2s ease 0s 1 normal;
+            animation: fadeIn 2s ease 0s 1 normal; }
 
 .about__section {
   position: relative;
