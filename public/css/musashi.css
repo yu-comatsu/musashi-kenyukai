@@ -468,6 +468,9 @@
     .about__section__table ul {
       padding-left: 1em; }
 
+.about .about-us__img {
+  margin-top: 2rem; }
+
 .about__inter-section {
   display: -webkit-box;
   display: flex; }
@@ -482,6 +485,13 @@
     -webkit-writing-mode: horizontal-tb;
         -ms-writing-mode: lr-tb;
             writing-mode: horizontal-tb; }
+  .about .about-us__text {
+    padding: .5rem;
+    box-sizing: border-box; }
+    .about .about-us__text .about__section__title {
+      margin-top: 0; }
+  .about .about-us__img {
+    margin: 0; }
   .message__img {
     display: block; }
   .message__para {
@@ -506,7 +516,7 @@
   display: -webkit-box;
   display: flex;
   min-height: 40vh;
-  background-image: url("../img/お話する会員.JPG");
+  background-image: url("../img/activity_hero_700x467px.jpg");
   background-size: cover;
   background-position: center; }
   .activity__hero__title {
@@ -521,7 +531,9 @@
     font-weight: normal;
     letter-spacing: .2em;
     padding: 0 .5em;
-    background-color: rgba(0, 0, 0, 0.5); }
+    background-color: rgba(0, 0, 0, 0.5);
+    -webkit-animation: fadeIn 2s ease 0s 1 normal;
+            animation: fadeIn 2s ease 0s 1 normal; }
 
 .activity__section {
   position: relative;
@@ -565,19 +577,25 @@
     left: 0;
     width: 100%;
     height: 100%; }
-  @media screen and (min-width: 35.5em) {
-    .activity .calender-wrapper {
-      padding-top: 100%; } }
 
 .activity .buttons__button {
   margin-bottom: 1.5em; }
 
+@media screen and (min-width: 35.5em) {
+  .activity .calender-wrapper {
+    padding-top: 100%; } }
+
 @media screen and (min-width: 48em) {
+  .activity__hero {
+    background-image: url("../img/activity_hero.jpg"); }
   .activity__section__school__desc {
     box-sizing: border-box;
     padding-left: .5em; }
   .activity__section__school__title {
-    margin-top: 0; } }
+    margin-top: 0; }
+  .activity .calender-wrapper {
+    margin: 0;
+    padding-top: 75%; } }
 
 @media screen and (min-width: 64em) {
   .activity__hero, .activity__section {
@@ -586,8 +604,8 @@
     font-size: 2em;
     margin-left: 0; }
   .activity .calender-wrapper {
-    margin: 0;
-    padding-top: 75%; } }
+    margin: 0 2rem;
+    padding-top: 70%; } }
 
 .contact__hero {
   display: -webkit-box;

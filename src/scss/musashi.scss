@@ -516,6 +516,11 @@
             }
         }
     }
+    .about-us{
+        &__img{
+            margin-top: 2rem;
+        }
+    }
     &__inter-section{
         display: flex;
         svg{
@@ -535,6 +540,18 @@
                         writing-mode: horizontal-tb;
                     }
                 }
+            }
+        }
+        .about-us{
+            &__text{
+                padding: .5rem;
+                box-sizing: border-box;
+                .about__section__title{
+                    margin-top: 0;
+                }
+            }
+            &__img{
+                margin: 0;
             }
         }
     }
@@ -583,7 +600,7 @@
     &__hero{
         display: flex;
         min-height: 40vh;
-        background-image: url($site-top+"/img/お話する会員.JPG");
+        background-image: url($site-top+"/img/activity_hero_700x467px.jpg");
         background-size:  cover;
         background-position: center;
         &__title{
@@ -597,6 +614,7 @@
             letter-spacing: .2em;
             padding: 0 .5em;
             background-color: rgba(black, .5);
+            @include fadeIn;
         }
     }
     &__section{
@@ -650,9 +668,6 @@
             width: 100%;
             height: 100%;
         }
-        @include media(sm){
-            padding-top: 100%;
-        }
     }
     .buttons{
         &__button{
@@ -660,8 +675,18 @@
         }
     }
 }
+@include media(sm){
+    .activity{
+        .calender-wrapper{
+            padding-top: 100%;
+        }
+    }
+}
 @include media(md){
     .activity{
+        &__hero{
+            background-image: url($site-top+"/img/activity_hero.jpg");
+        }
         &__section{
             &__school{
                 &__desc{
@@ -672,6 +697,10 @@
                     margin-top: 0;
                 }
             }
+        }
+        .calender-wrapper{
+            margin: 0;
+            padding-top: 75%;
         }
     }
 }
@@ -687,8 +716,8 @@
             }
         }
         .calender-wrapper{
-            margin: 0;
-            padding-top: 75%;
+            margin: 0 2rem;
+            padding-top: 70%;
         }
     }
 }

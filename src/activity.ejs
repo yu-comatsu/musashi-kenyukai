@@ -20,6 +20,8 @@
     <% for (var i = 0; i < Object.keys($css.all).length; i++) { %>
         <link rel="stylesheet" href="<%=$css["all"]["num"+(i+1)] %>">
     <% } %>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="./js/sal.js"></script>
 </head>
 <body class="activity">
     <%- include("./ejs/_drawer.ejs") -%>
@@ -28,16 +30,42 @@
             <h1 class="activity__hero__title"><%= $pageName %></h1>
         </header>
         <section class="activity__section schedule" id="schedule">
-            <h2 class="activity__section__title">活動スケジュール</h2>
-            <p class="activity__section__text">親譲りの無鉄砲で小供の時から損ばかりしている。小学校に居る時分学校の二階から飛び降りて一週間ほど腰を抜かした事がある。なぜそんな無闇をしたと聞く人があるかも知れぬ。別段深い理由でもない。新築の二階から</p>
-            <div class="calender-wrapper">
+            <div 
+            data-sal="fade"
+            data-sal-delay="300"
+            data-sal-duration="1000"
+            data-sal-easing="easeInOutCubic"
+            >
+                <h2 class="activity__section__title">活動スケジュール</h2>
+                <p class="activity__section__text">親譲りの無鉄砲で小供の時から損ばかりしている。小学校に居る時分学校の二階から飛び降りて一週間ほど腰を抜かした事がある。なぜそんな無闇をしたと聞く人があるかも知れぬ。別段深い理由でもない。新築の二階から</p>
+            </div>
+            <div 
+            class="calender-wrapper"
+            data-sal="fade"
+            data-sal-delay="300"
+            data-sal-duration="1000"
+            data-sal-easing="easeInOutCubic"
+            >
                 <iframe src="https://calendar.google.com/calendar/b/1/embed?height=600&amp;wkst=1&amp;bgcolor=%23ffffff&amp;ctz=Asia%2FTokyo&amp;src=Y290b2xpd21vLmNvbV8wb3BlMTFqaDB2dDU3NTRjbzdyazFnYjZnNEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;src=amEuamFwYW5lc2UjaG9saWRheUBncm91cC52LmNhbGVuZGFyLmdvb2dsZS5jb20&amp;color=%23A87070&amp;color=%231F753C&amp;showTz=0&amp;showCalendars=0&amp;showPrint=0&amp;showTabs=0&amp;showNav=1&amp;showDate=1" style="border-width:0" width="800" height="650" frameborder="0" scrolling="no"></iframe>
             </div>
         </section>
         <section class="activity__section practice" id="practice">
-            <h2 class="activity__section__title">稽古について</h2>
-            <p class="activity__section__text">親譲りの無鉄砲で小供の時から損ばかりしている。小学校に居る時分学校の二階から飛び降りて一週間ほど腰を抜かした事がある。なぜそんな無闇をしたと聞く人があるかも知れぬ。別段深い理由でもない。新築の二階から</p>
-            <div class="buttons pure-g">
+            <div 
+            data-sal="fade"
+            data-sal-delay="300"
+            data-sal-duration="1000"
+            data-sal-easing="easeInOutCubic"
+            >
+                <h2 class="activity__section__title">稽古について</h2>
+                <p class="activity__section__text">親譲りの無鉄砲で小供の時から損ばかりしている。小学校に居る時分学校の二階から飛び降りて一週間ほど腰を抜かした事がある。なぜそんな無闇をしたと聞く人があるかも知れぬ。別段深い理由でもない。新築の二階から</p>
+            </div>
+            <div 
+            class="buttons pure-g"
+            data-sal="fade"
+            data-sal-delay="300"
+            data-sal-duration="1000"
+            data-sal-easing="easeInOutCubic"
+            >
                 <div class="buttons__button pure-u pure-u-1 pure-u-sm-1-2">
                     <a class="ctl-button" href="<%= $site.top_url+$site.contact.slug+".html" %>">
                         <i></i><span>見学のお申込み</span>
@@ -49,17 +77,74 @@
                     </a>
                 </div>
             </div>
+            <table class="about__section__table pure-table pure-table-horizontal">
+                <tbody>
+                    <tr>
+                        <th><span>日時</span></th>
+                        <td>毎週金曜日 19：00～21：00</br>
+                            毎週日曜日 9：00～12：00</td>
+                    </tr>
+                    <tr>
+                        <th><span>場所</span></th>
+                        <td>金曜日：ふじみ野市立鶴が丘小学校 体育館</br>
+                            日曜日：ふじみ野市立西小学校 体育館</br>
+                            ※学校行事等で体育館が使用出来ない場合は他の施設へ変更、または休みになる場合も有ります。都度、ホームページ上でご案内いたします。
+                        </td>
+                    </tr>
+                    <tr>
+                        <th><span>主な稽古内容</span></th>
+                        <td>剣道の基本稽古<br>
+                            切り返し 基本打ち（面、小手面） かかり稽古など
+                        </td>
+                    </tr>
+                    <tr>
+                        <th><span>稽古の持ち物</span></th>
+                        <td>竹刀・稽古着<br>
+                            剣道着が無い場合、動きやすい服装（スポーツウェア等）でも可<br>
+                            ※見学・体験の方は持ち物は不要です
+                        </td>
+                    </tr>
+                    <tr>
+                        <th><span>段位審査について</span></th>
+                        <td>
+                            小学生から大人まで段位審査の常時サポートを行っています。
+                        </td>
+                    </tr>
+                    <tr>
+                        <th><span>見学・体験について</span></th>
+                        <td>
+                            稽古の見学・体験は常時受け付けています。<br>
+                            必要なものは特に有りません。体験の場合も、動きやすい服装であれば可。<br>
+                            防具に関しても体験では着用の必要はありません。
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
         </section>
         <div class="activity__inter-section">
             <%- include("./ejs/_tonbo.svg.ejs") %>
         </div>
         <section class="activity__section access" id="access">
-            <h2 class="activity__section__title">アクセス</h2>
-            <p class="activity__section__text">親譲りの無鉄砲で小供の時から損ばかりしている。小学校に居る時分学校の二階から飛び降りて一週間ほど腰を抜かした事がある。なぜそんな無闇をしたと聞く人があるかも知れぬ。別段深い理由でもない。新築の二階から</p>
-            <a class="ctl-button" href="<%= $site.top_url+$site.contact.slug+".html" %>">
-                <i></i><span>お問い合わせ</span>
-            </a>
-            <div class="activity__section__school pure-g">
+            <div 
+            data-sal="fade"
+            data-sal-delay="300"
+            data-sal-duration="1000"
+            data-sal-easing="easeInOutCubic"
+            >
+                <h2 class="activity__section__title">アクセス</h2>
+                <p class="activity__section__text">親譲りの無鉄砲で小供の時から損ばかりしている。小学校に居る時分学校の二階から飛び降りて一週間ほど腰を抜かした事がある。なぜそんな無闇をしたと聞く人があるかも知れぬ。別段深い理由でもない。新築の二階から</p>
+                <a class="ctl-button" href="<%= $site.top_url+$site.contact.slug+".html" %>">
+                    <i></i><span>お問い合わせ</span>
+                </a>
+            </div>
+            <div 
+            class="activity__section__school pure-g"
+            data-sal="fade"
+            data-sal-delay="300"
+            data-sal-duration="1000"
+            data-sal-easing="easeInOutCubic"
+            >
                 <div class="activity__section__school__img pure-u pure-u-1 pure-u-md-1-2 pure-u-lg-14-24">
                     <img src="./img/nishi-primary-school.jpg" alt="ふじみ野市立 西小学校">
                 </div>
@@ -81,7 +166,13 @@
                     </div>
                 </div>
             </div>
-            <div class="activity__section__school pure-g">
+            <div 
+            class="activity__section__school pure-g"
+            data-sal="fade"
+            data-sal-delay="300"
+            data-sal-duration="1000"
+            data-sal-easing="easeInOutCubic"
+            >
                 <div class="activity__section__school__img pure-u pure-u-1 pure-u-md-1-2 pure-u-lg-14-24">
                     <img src="./img/nishi-primary-school.jpg" alt="ふじみ野市立 鶴ヶ丘小学校">
                 </div>
@@ -105,11 +196,18 @@
             </div>
         </section>
         <section class="activity__section event" id="event">
-            <h2 class="activity__section__title">年間行事</h2>
-            <p class="activity__section__text">親譲りの無鉄砲で小供の時から損ばかりしている。小学校に居る時分学校の二階から飛び降りて一週間ほど腰を抜かした事がある。なぜそんな無闇をしたと聞く人があるかも知れぬ。別段深い理由でもない。新築の二階から</p>
-            <a class="ctl-button" href="<%= $site.top_url+$site.contact.slug+".html" %>">
-                <i></i><span>お問い合わせ</span>
-            </a>
+            <div 
+                data-sal="fade"
+                data-sal-delay="300"
+                data-sal-duration="1000"
+                data-sal-easing="easeInOutCubic"
+            >
+                <h2 class="activity__section__title">年間行事</h2>
+                <p class="activity__section__text">会員のお子様に保護者様を交えての懇親会を年2回ほど開催し、会員同士の交流の場としています。</p>
+                <a class="ctl-button" href="<%= $site.top_url+$site.contact.slug+".html" %>">
+                    <i></i><span>お問い合わせ</span>
+                </a>
+            </div>
         </section>
         <%- include("./ejs/_footer.ejs") %>
     </div>
