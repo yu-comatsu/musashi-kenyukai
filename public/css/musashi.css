@@ -611,9 +611,9 @@
   display: -webkit-box;
   display: flex;
   min-height: 40vh;
-  background-image: url("../img/お話する会員.JPG");
+  background-image: url("../img/teaching_800x533px.jpg");
   background-size: cover;
-  background-position: center; }
+  background-position: 50% 25%; }
   .contact__hero__title {
     display: inline-block;
     margin: auto auto .5em 1em;
@@ -626,22 +626,23 @@
     font-weight: normal;
     letter-spacing: .2em;
     padding: 0 .5em;
-    background-color: rgba(0, 0, 0, 0.5); }
+    background-color: rgba(0, 0, 0, 0.5);
+    -webkit-animation: fadeIn 2s ease 0s 1 normal;
+            animation: fadeIn 2s ease 0s 1 normal; }
 
 .contact__form__text {
   padding: 0 2em; }
 
 .contact__form__wrapper {
   position: relative;
-  width: 100%;
+  width: auto;
   max-width: 700px;
   height: 0;
-  padding-top: 520px;
+  padding-top: 2000px;
   margin: 1em auto;
   margin-top: 2em;
   overflow: auto;
-  -webkit-overflow-scrolling: touch;
-  border: 2px solid #ccc; }
+  -webkit-overflow-scrolling: touch; }
   .contact__form__wrapper iframe {
     position: absolute;
     top: 0;
@@ -651,12 +652,16 @@
     border: none;
     display: block; }
 
+@media screen and (min-width: 48em) {
+  .contact__hero {
+    background-image: url("../img/teaching_1920x1280px.jpg"); }
+  .contact__form__wrapper {
+    padding-top: 1800px; } }
+
 @media screen and (min-width: 64em) {
   .contact__hero, .contact__form {
     padding: 5em calc(50% - (450 / 16)*1em); }
   .contact__hero__title {
     font-size: 2em; }
   .contact__form__text {
-    text-align: center; }
-  .contact__form__wrapper {
-    padding-top: 100%; } }
+    text-align: center; } }
