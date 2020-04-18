@@ -41,7 +41,17 @@
         transform: scale(1, 1);
     }
 }
-
+//===============================================
+//タグ別基本設定==================================
+//===============================================
+h2{
+    font-size: 1.5em;
+    @include media(lg){
+        &{
+            font-size: 2em;
+        }
+    }
+}
 
 //===============================================
 //共通パーツ==================================
@@ -234,10 +244,34 @@
         width: 40%;
         transform: rotate(45deg);
         fill: rgba(white, .2);
+        z-index: 0;
     }
     span{
         display: block;
         color: white;
+    }
+    &__links{
+        padding: 0 $contents-width;
+        display: flex;
+        flex-direction: column;
+        margin: 3em 0;
+        h2, a, li{
+            color: white;
+        }
+        h2{
+            margin-bottom: 0;
+        }
+        h2, li{
+            text-align: left;
+        }
+        li {
+            padding: .5em 0;
+        }
+        .sitemap, .related{
+            padding: 1rem;
+            position: relative;
+            z-index: 1;
+        }
     }
     &__bottom{
         background-color: rgba($clr-font, .7);
@@ -250,6 +284,18 @@
             font-family: $font-family-alt;
             font-size: (12/16)*1em;
             color: rgba(white, .7);
+        }
+    }
+}
+@include media(md){
+    .footer{
+        &__links{
+            flex-direction: row;
+            justify-content: center;
+            .sitemap, .related{
+                padding-left: 3rem;
+                padding-right: 3rem;
+            }    
         }
     }
 }
@@ -334,6 +380,10 @@
     }
     &__text{
         line-height: 2;
+        &__quate{
+            display: block;
+            margin-bottom: 4em;
+        }
     }
 }
 @include media(md){
@@ -348,7 +398,7 @@
 }
 @include media(lg){
     .top-section{
-        padding: 5em calc(50% - (450 / 16)*1em);
+        padding: 5em $contents-width;
     }
 }
 
@@ -474,6 +524,7 @@
         &.message{
             .president-name{
                 font-size: (20 / 16)*1em;
+                font-weight: 600;
             }
         }
         @at-root .mentor{
@@ -485,7 +536,8 @@
                 &__name{
                     margin: 0;
                     margin-top: .5em;
-                    font-weight: normal;
+                    font-size: 1.3em;
+                    font-weight: 600;
                 }
                 &__job-title{
                     font-size: (14 / 16)*1em;
@@ -517,6 +569,10 @@
         }
     }
     .about-us{
+        .about__section__text{
+            margin: 0;
+            margin-bottom: 1rem;
+        }
         &__img{
             margin-top: 2rem;
         }
@@ -654,6 +710,18 @@
             max-width: 50%;
             margin: auto;
             fill: $clr-accent;
+        }
+    }
+    .gledoc-wrap{
+        position: relative;
+        padding-top: 180px;
+        iframe{
+            position: absolute;
+            top: 0;
+            left: 0;
+            border: none;
+            width: 100%;
+            height: 100%;
         }
     }
     .calender-wrapper{

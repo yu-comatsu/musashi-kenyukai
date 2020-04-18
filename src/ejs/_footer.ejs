@@ -2,8 +2,27 @@
 
 <footer class="footer">
     <h1 class="footer__logo"><%= $site.title %></h1>
-    <%- include("./_tonbo.svg.ejs") %>
     <span>埼玉県ふじみ野市で剣道なら</span><span>武蔵剣友会へ</span>
+    <div class="footer__links">
+        <nav class="sitemap">
+            <h2 class="sitemap__title">サイトマップ</h3>
+            <ul class="sitemap__list">
+                <li class="sitemap__list__item"><a href="<%- $site.top_url %>">トップ</a></li>
+                <li class="sitemap__list__item"><a href="<%- $site.top_url %>about.html">武蔵剣友会について</a></li>
+                <li class="sitemap__list__item"><a href="<%- $site.top_url %>activity.html">活動について</a></li>
+                <li class="sitemap__list__item"><a href="<%- $site.top_url %>contact.html">お問い合わせ</a></li>
+            </ul>
+        </nav>
+        <aside class="related">
+            <h2 class="related__title">関連団体</h2>
+            <ul class="related__list">
+                <li class="related__list__item"><a href="https://www.kendo.or.jp/" target="_blank">全日本剣道連盟</a></li>
+                <li class="related__list__item"><a href="http://www.saitama-kendo.or.jp/" target="_blank">埼玉県剣道連盟</a></li>
+                <li class="related__list__item"><a href="https://higashiirumakenren.wixsite.com/home/blank-4/" target="_blank">東入間剣道連盟</a></li>
+            </ul>
+        </aside>
+    </div>
+    <%- include("./_tonbo.svg.ejs") %>
     <div class="footer__bottom">
         <span>&copy; 武蔵剣友会 All rights reserved.</h1>
     </div>

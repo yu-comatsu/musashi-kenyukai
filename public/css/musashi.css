@@ -10,6 +10,12 @@
   100% {
     opacity: 1; } }
 
+h2 {
+  font-size: 1.5em; }
+  @media screen and (min-width: 64em) {
+    h2 {
+      font-size: 2em; } }
+
 .ctl-button {
   cursor: pointer;
   color: black;
@@ -248,10 +254,31 @@
     width: 40%;
     -webkit-transform: rotate(45deg);
             transform: rotate(45deg);
-    fill: rgba(255, 255, 255, 0.2); }
+    fill: rgba(255, 255, 255, 0.2);
+    z-index: 0; }
   .footer span {
     display: block;
     color: white; }
+  .footer__links {
+    padding: 0 calc(50% - (450 / 16)*1em);
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+            flex-direction: column;
+    margin: 3em 0; }
+    .footer__links h2, .footer__links a, .footer__links li {
+      color: white; }
+    .footer__links h2 {
+      margin-bottom: 0; }
+    .footer__links h2, .footer__links li {
+      text-align: left; }
+    .footer__links li {
+      padding: .5em 0; }
+    .footer__links .sitemap, .footer__links .related {
+      padding: 1rem;
+      position: relative;
+      z-index: 1; }
   .footer__bottom {
     background-color: rgba(0, 0, 0, 0.7);
     position: absolute;
@@ -263,6 +290,17 @@
       font-family: "Yu Gothic", "游ゴシック", YuGothic, "游ゴシック体", "ヒラギノ角ゴ Pro W3", "メイリオ", sans-serif;
       font-size: 0.75em;
       color: rgba(255, 255, 255, 0.7); }
+
+@media screen and (min-width: 48em) {
+  .footer__links {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+            flex-direction: row;
+    -webkit-box-pack: center;
+            justify-content: center; }
+    .footer__links .sitemap, .footer__links .related {
+      padding-left: 3rem;
+      padding-right: 3rem; } }
 
 .hero {
   position: relative;
@@ -334,6 +372,9 @@
     font-weight: normal; }
   .top-section__text {
     line-height: 2; }
+    .top-section__text__quate {
+      display: block;
+      margin-bottom: 4em; }
 
 @media screen and (min-width: 48em) {
   .top-section__title {
@@ -440,7 +481,8 @@
   .about__section.award {
     background-color: rgba(229, 210, 170, 0.2); }
   .about__section.message .president-name {
-    font-size: 1.25em; }
+    font-size: 1.25em;
+    font-weight: 600; }
   .mentor__card {
     margin-bottom: 3em; }
     .mentor__card__img {
@@ -448,7 +490,8 @@
     .mentor__card__name {
       margin: 0;
       margin-top: .5em;
-      font-weight: normal; }
+      font-size: 1.3em;
+      font-weight: 600; }
     .mentor__card__job-title {
       font-size: 0.875em;
       color: rgba(0, 0, 0, 0.7); }
@@ -467,6 +510,10 @@
       white-space: nowrap; }
     .about__section__table ul {
       padding-left: 1em; }
+
+.about .about-us .about__section__text {
+  margin: 0;
+  margin-bottom: 1rem; }
 
 .about .about-us__img {
   margin-top: 2rem; }
@@ -565,6 +612,17 @@
     max-width: 50%;
     margin: auto;
     fill: #E62B1E; }
+
+.activity .gledoc-wrap {
+  position: relative;
+  padding-top: 180px; }
+  .activity .gledoc-wrap iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    border: none;
+    width: 100%;
+    height: 100%; }
 
 .activity .calender-wrapper {
   position: relative;
