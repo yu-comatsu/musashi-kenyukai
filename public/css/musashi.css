@@ -156,10 +156,13 @@ h2 {
     transition: opacity .3s ease; }
   .drawer__contents {
     position: fixed;
+    display: grid;
+    grid-template-rows: 1fr -webkit-max-content;
+    grid-template-rows: 1fr max-content;
     top: 0;
     left: 0;
     width: 100%;
-    height: 100vh;
+    height: 100%;
     background-color: white;
     z-index: 999;
     -webkit-transform: translateX(101%);
@@ -173,14 +176,14 @@ h2 {
     -webkit-transition-duration: .3s;
             transition-duration: .3s; }
     .drawer__contents__list {
-      margin-top: 5em; }
+      margin: 5em 0; }
     .drawer__contents__item {
       text-align: center; }
     .drawer__contents__link {
       -webkit-transition: background-color 0.3s ease;
       transition: background-color 0.3s ease; }
     .drawer__contents__bottom {
-      position: absolute;
+      position: relative;
       bottom: 0;
       left: 0;
       right: 0;
@@ -191,6 +194,8 @@ h2 {
       height: max-content;
       text-align: center;
       overflow: hidden; }
+      .drawer__contents__bottom__wrap {
+        height: 100%; }
       .drawer__contents__bottom svg {
         position: absolute;
         top: 20%;
@@ -615,7 +620,9 @@ h2 {
 
 .activity .gledoc-wrap {
   position: relative;
-  padding-top: 180px; }
+  padding-top: 180px;
+  border: solid 1px #333;
+  margin-bottom: 4rem; }
   .activity .gledoc-wrap iframe {
     position: absolute;
     top: 0;
@@ -627,6 +634,7 @@ h2 {
 .activity .calender-wrapper {
   position: relative;
   margin: 0 -2em;
+  margin-bottom: 2rem;
   height: 0;
   padding-top: 150%; }
   .activity .calender-wrapper iframe {
@@ -653,6 +661,7 @@ h2 {
     margin-top: 0; }
   .activity .calender-wrapper {
     margin: 0;
+    margin-bottom: 2rem;
     padding-top: 75%; } }
 
 @media screen and (min-width: 64em) {
@@ -662,7 +671,6 @@ h2 {
     font-size: 2em;
     margin-left: 0; }
   .activity .calender-wrapper {
-    margin: 0 2rem;
     padding-top: 70%; } }
 
 .contact__hero {

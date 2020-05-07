@@ -68,7 +68,7 @@
                 <table class="about__section__table pure-table pure-table-horizontal">
                     <thead>
                         <tr>
-                            <th>年月</th>
+                            <th></th>
                             <th>できごと</th>
                         </tr>
                     </thead>
@@ -79,31 +79,31 @@
                             <td>武蔵剣友会発足</td>
                         </tr>
                         <tr>
-                            <td>同年〜</td>
-                            <td>初代会長 黒坂 富蔵先生</td>
+                            <td>初代会長</td>
+                            <td>黒坂 富蔵先生</td>
                         </tr>
                         <tr>
-                            <td>昭和51年～</td>
-                            <td>星 力二先生 会長就任</td>
+                            <td>二代会長</td>
+                            <td>星 力二先生</td>
                         </tr>
                         <tr>
-                            <td>昭和68年〜</td>
-                            <td>三ヶ尻 清先生 会長就任</td>
+                            <td>三代会長</td>
+                            <td>三ヶ尻 清先生</td>
                         </tr>
                         <tr>
-                            <td>平成○年〜</td>
-                            <td>小川 公夫先生 会長就任</td>
+                            <td>四代会長</td>
+                            <td>小川 公夫先生</td>
                         </tr>
                         <tr>
-                            <td>平成○年〜</td>
-                            <td>角屋 弘先生 会長就任</td>
+                            <td>五代会長</td>
+                            <td>角屋 弘先生</td>
                         </tr>
                         <tr>
-                            <td>平成○年〜</td>
-                            <td>山口 秀二先生 会長就任</td>
+                            <td>六代会長</td>
+                            <td>山口 秀二先生</td>
                         </tr>
                         <tr>
-                            <td>平成○年〜現在</td>
+                            <td>七代会長</td>
                             <td>角屋 弘先生 会長就任</td>
                         </tr>
                     </tbody>
@@ -159,6 +159,7 @@
                 <h2 class="about__section__title">指導者紹介</h2>
                 <p class="about__section__text">武蔵剣友会で指導を行う先生方をご紹介します。</p>
             </div>
+            <%# 指導者紹介ユニット（画像つき）---------------------------------------------------%>
             <div 
                 class="mentor__card pure-g"
                 data-sal="fade"
@@ -183,6 +184,7 @@
                     </p>
                 </div>
             </div>
+            <%# 指導者紹介ユニット（画像つき）---------------------------------------------------%>
             <div 
                 class="mentor__card pure-g"
                 data-sal="fade"
@@ -207,6 +209,63 @@
                     <p class="mentor__card__text">
                         剣道歴は50年になりました。好きな言葉は「守破離」「不動心」。
                     </p>
+                </div>
+            </div>
+            <%# 指導者紹介ユニット（画像つき）---------------------------------------------------%>
+            <div 
+                class="mentor__card pure-g"
+                data-sal="fade"
+                data-sal-delay="300"
+                data-sal-duration="1000"
+                data-sal-easing="easeInOutCubic"
+                >
+                <div class="mentor__card__img pure-u pure-u-1 pure-u-md-1-2 pure-u-lg-14-24">
+                    <img class="mentor__card__img" src="" alt="原 健治 先生">
+                </div>
+                <div class="mentor__card__para pure-u pure-u-1 pure-u-md-1-2 pure-u-lg-10-24">
+                    <h3 class="mentor__card__name">原 健治 剣道三段</h3>
+                    <span class="mentor__card__job-title">
+                        武蔵剣友会副会長
+                    </span>
+                    <p class="mentor__card__text">
+                        会社員。40歳のときに小学４年の息子と範士松井貞志館長の剣道右武館に入館し、人生で初めて剣道の道に入りました。武蔵剣友会には平成27年に入会し、会員の子供たちと一緒に修練しています。
+                    </p>
+                    <p class="mentor__card__text">
+                        剣道を通じて子供たちを導くことを簡単だとは思っていません。だから、ある意味子育てと同じで、お互いに学び、教えられ、研鑽を積んでいます。
+                    </p>
+                    <p class="mentor__card__text">
+                        「優しい心」「強い心」「感謝する心」「正しい心」「正直な心」がもっともっと大きく育むように努めています。
+                    </p>
+                </div>
+            </div>
+            <%# 指導者紹介ユニット（画像なし）---------------------------------------------------%>
+            <div 
+                class="mentor__card pure-g"
+                data-sal="fade"
+                data-sal-delay="300"
+                data-sal-duration="1000"
+                data-sal-easing="easeInOutCubic"
+                >
+                <div class="mentor__card__para pure-u pure-u-1">
+                    <h3 class="mentor__card__name">菊池 優 剣道四段</h3>
+                    <span class="mentor__card__job-title">
+                        武蔵剣友会 監査役
+                    </span>
+                </div>
+            </div>
+            <%# 指導者紹介ユニット（画像なし）---------------------------------------------------%>
+            <div 
+                class="mentor__card pure-g"
+                data-sal="fade"
+                data-sal-delay="300"
+                data-sal-duration="1000"
+                data-sal-easing="easeInOutCubic"
+                >
+                <div class="mentor__card__para pure-u pure-u-1">
+                    <h3 class="mentor__card__name">半田 和雄 剣道三段</h3>
+                    <span class="mentor__card__job-title">
+                        武蔵野剣友会 事務局
+                    </span>
                 </div>
             </div>
             <a class="ctl-button" href="<%= $site.top_url+$site.activity.slug+".html#practice" %>">
@@ -247,14 +306,17 @@
                             </td>
                         </tr>
                         <tr>
-                            <th><span>東入間剣道連盟登録料</span></th>
-                            <td>年額1,500円</td>
+                            <th><span>剣道連盟費</span></th>
+                            <td>年額5,000円</td>
                         </tr>
                         <tr>
                             <th><span>その他</span></th>
                             <td>
                                 稽古に参加する条件としてスポーツ保険に加入している事が条件となります。<br>
-                                （スポーツ保険料 年間800円～1,850円）
+                                ※スポーツ保険料（年額）<br>
+                                小学生・中学生　800円<br>
+                                高校生～64才以上　1,850円<br>
+                                65才以上　1,200円<br>
                             </td>
                         </tr>
                     </tbody>

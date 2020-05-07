@@ -16,9 +16,11 @@
                 <li class="drawer__contents__item pure-menu-item"><a class="drawer__contents__link pure-menu-link" href="<%= $site.top_url+$site.contact.slug+".html" %>">お問い合わせ</a></li>
             </ul>
         </nav>
-        <div class="drawer__contents__bottom">
-            <span class="drawer__contents__logo"><%= $site.title %></span>
-            <%- include("./_tonbo.svg.ejs") %>
+        <div class="drawer__contents__bottom__wrap">
+            <div class="drawer__contents__bottom">
+                <span class="drawer__contents__logo"><%= $site.title %></span>
+                <%- include("./_tonbo.svg.ejs") %>
+            </div>
         </div>
     </div>
 </div>
