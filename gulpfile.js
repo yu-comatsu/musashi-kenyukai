@@ -6,11 +6,11 @@ const rename = require('gulp-rename');
 const plumber = require('gulp-plumber');
 const notify = require('gulp-notify');
 
-const ctlModule = "/Users/yuta_comatsu/Google ドライブ/Web Media Office/04顧客対応/単発案件/武蔵剣友会/musashi-kenyukai";
+const ctlModule = ".";
 const src = ctlModule+"/src"
 const public = ctlModule+"/public"
 
-
+console.log(src);
 // 監視 ※gulp4の書き方です。
 gulp.task( "default", function () {
     gulp.watch( src+"/**/*.scss", gulp.series( "sass" ) ); // srcディレクトリ以下の.scssファイルの更新を監視
