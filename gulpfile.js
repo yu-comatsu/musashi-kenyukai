@@ -1,14 +1,20 @@
 const gulp = require('gulp');
 const ejs = require('gulp-ejs');
-const sass = require("gulp-sass");
+const sass = require('gulp-sass')(require('sass'));
 const autoprefixer = require("gulp-autoprefixer");
 const rename = require('gulp-rename');
 const plumber = require('gulp-plumber');
 const notify = require('gulp-notify');
+const isCI = !!process.env.CI;
 
 const ctlModule = ".";
 const src = ctlModule+"/src"
 const public = ctlModule+"/public"
+
+function maybeNotify(opts) {
+    if (isCI) return () => {}; // noop stream/handler on CI
+    return notify(opts);
+}
 
 console.log(src);
 // 監視 ※gulp4の書き方です。
@@ -28,12 +34,16 @@ gulp.task("ejs", function() {
         }))
         .pipe(ejs())
         .pipe(rename({ extname: '.html' }))
-        .pipe(gulp.dest(public))
-        .pipe(notify({
-            title: 'Task running Gulp',
-            message: 'ejs file compiled.',
-            sound: 'Purr',
-        }));
+        .pipe(gulp.dest(public));
+        /*
+        .pipe(maybeNotify(
+            { 
+                title: 'Task running Gulp',
+                message: 'ejs file compiled.',
+                sound: 'Purr',
+            }
+        ));
+        */
 });
 
 
@@ -49,12 +59,16 @@ gulp.task("sass", function() {
         }))
         .pipe(sass()) // Sassのコンパイルを実行
         .pipe( autoprefixer())
-        .pipe(gulp.dest(public+"/css")) // cssフォルダー以下に保存
-        .pipe(notify({
-            title: 'Task running Gulp',
-            message: 'sass file compiled.',
-            sound: 'Purr',
-        }));
+        .pipe(gulp.dest(public+"/css")); // cssフォルダー以下に保存
+        /*
+        .pipe(maybeNotify(
+            {
+                title: 'Task running Gulp',
+                message: 'sass file compiled.',
+                sound: 'Purr',
+            }
+        ));
+        */
 });
 
 //ビルド
