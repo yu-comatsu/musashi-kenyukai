@@ -5,16 +5,18 @@ const autoprefixer = require("gulp-autoprefixer");
 const rename = require('gulp-rename');
 const plumber = require('gulp-plumber');
 const notify = require('gulp-notify');
-const isCI = !!process.env.CI;
+//const isCI = !!process.env.CI;
 
 const ctlModule = ".";
 const src = ctlModule+"/src"
 const public = ctlModule+"/public"
 
+/*
 function maybeNotify(opts) {
     if (isCI) return () => {}; // noop stream/handler on CI
     return notify(opts);
 }
+*/
 
 console.log(src);
 // 監視 ※gulp4の書き方です。
